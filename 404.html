@@ -8,19 +8,27 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f4f6fb;color:#1c2333;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
-.spin{width:34px;height:34px;border:3.5px solid #dcdfff;border-top-color:#4a5cf0;border-radius:50%;animation:sp .7s linear infinite;margin:0 auto 16px}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f5f6fc;color:#191e2e;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;overflow:hidden}
+body::before{content:"";position:fixed;top:-200px;left:50%;transform:translateX(-70%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(74,92,240,.16),transparent 65%)}
+body::after{content:"";position:fixed;bottom:-220px;left:50%;transform:translateX(4%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,90,173,.13),transparent 65%)}
+.box{position:relative;z-index:1;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);border-radius:24px;padding:40px 36px;box-shadow:0 10px 34px rgba(25,30,46,.08);max-width:400px}
+.spin{width:38px;height:38px;border:3.5px solid #ded9ff;border-top-color:#4a5cf0;border-radius:50%;animation:sp .7s linear infinite;margin:0 auto 18px}
 @keyframes sp{to{transform:rotate(360deg)}}
-h1{font-size:1.15rem;font-weight:700}
-p{color:#6b7385;font-size:.9rem;margin-top:8px;word-break:break-all}
-a{color:#4a5cf0;font-weight:700;text-decoration:none}
+h1{font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+p{color:#69718a;font-size:.9rem;margin-top:8px;word-break:break-all}
+a{color:#4a5cf0;font-weight:800;text-decoration:none}
 #nf{display:none}
-.big{font-size:2.6rem;margin-bottom:10px}
+.big{font-size:2.8rem;margin-bottom:12px}
+.brand{margin-top:22px;font-size:.72rem;color:#9aa1b8;font-weight:700}
+.brand b{background:linear-gradient(94deg,#4a5cf0,#8b3df2);-webkit-background-clip:text;background-clip:text;color:transparent}
 </style>
 </head>
 <body>
-<div id="go"><div class="spin"></div><h1>이동하고 있어요…</h1><p id="slugShow"></p></div>
-<div id="nf"><div class="big">🤔</div><h1>존재하지 않는 단축주소예요</h1><p id="nfSlug"></p><p style="margin-top:14px"><a href="javascript:history.back()">← 뒤로 가기</a></p></div>
+<div class="box">
+  <div id="go"><div class="spin"></div><h1>이동하고 있어요…</h1><p id="slugShow"></p></div>
+  <div id="nf"><div class="big">🤔</div><h1>존재하지 않는 단축주소예요</h1><p id="nfSlug"></p><p style="margin-top:14px"><a href="javascript:history.back()">← 뒤로 가기</a></p></div>
+  <div class="brand"><b>SHU</b> · shu.is</div>
+</div>
 <script>
 const DB = "https://dobble-game-by-sujin-default-rtdb.asia-southeast1.firebasedatabase.app/shu/links";
 (async function(){
