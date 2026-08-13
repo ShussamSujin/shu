@@ -277,11 +277,26 @@ auth.onAuthStateChanged(async (user) => {
     if (ad && ad.children.length > 0) ad.style.display = "block";
     if (isAdmin) await claimPendingLinks();
     loadList();
+    applyExtensionParams();
   } else {
     document.getElementById("gate").style.display = "flex";
     document.getElementById("app").style.display = "none";
   }
 });
+
+/* 크롬 확장프로그램에서 전달된 주소 자동 입력 */
+function applyExtensionParams(){
+  const params = new URLSearchParams(location.search);
+  const pUrl = params.get("url");
+  if (!pUrl) return;
+  document.getElementById("longUrl").value = pUrl;
+  const pName = params.get("name");
+  if (pName) document.getElementById("slug").value = pName;
+  history.replaceState(null, "", location.pathname);
+  showMsg("🐩 슈슈가 주소를 물어왔어요! 이름을 정하고 버튼만 누르세요", "ok");
+  document.getElementById("slug").focus();
+  window.scrollTo(0, 0);
+}
 
 /* 관리자 최초 로그인 시 이전 버전 링크 소유권 인수 */
 async function claimPendingLinks(){
