@@ -70,6 +70,18 @@ h2{font-family:'Black Han Sans',sans-serif;font-size:1.35rem;margin-bottom:4px;t
 .item .row{display:flex;gap:7px;flex-wrap:wrap}
 .empty{text-align:center;color:#888;padding:30px 0;font-size:.9rem;font-weight:700}
 .ad-card{padding:12px;text-align:center;display:none}
+/* ── 확장프로그램 안내 카드 ── */
+#extCard{display:none;background:linear-gradient(135deg,#fff9e0,#fff);position:relative;overflow:hidden}
+#extCard.on{display:block}
+#extCard .ribbon{position:absolute;top:14px;right:-34px;transform:rotate(34deg);background:var(--pink);color:#fff;font-family:'Black Han Sans',sans-serif;font-size:.72rem;padding:4px 40px;border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink)}
+#extCard .inner{display:flex;align-items:center;gap:16px}
+#extCard .dog{width:78px;flex-shrink:0;animation:bob 3s ease-in-out infinite;filter:drop-shadow(3px 3px 0 rgba(20,20,20,.18))}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-6px) rotate(2deg)}}
+#extCard h3{font-family:'Black Han Sans',sans-serif;font-size:1.18rem;transform:rotate(-1deg);line-height:1.35}
+#extCard p{font-size:.82rem;color:#555;font-weight:600;margin-top:5px;line-height:1.6}
+#extCard .btn-ext{margin-top:12px;width:100%;background:var(--yellow);font-size:1rem}
+#extCard .soon{margin-top:12px;text-align:center;font-size:.8rem;font-weight:800;color:#8a7500;background:#fff4c9;border:2.5px dashed var(--ink);border-radius:11px;padding:10px}
+@media (max-width:430px){#extCard .inner{flex-direction:column;text-align:center}}
 /* ── 로그인 게이트 ── */
 #gate{position:fixed;inset:0;background:var(--blue);display:flex;align-items:center;justify-content:center;z-index:50;overflow:hidden}
 #gate::before{content:"";position:absolute;top:-28vh;left:-30vw;width:95vw;height:95vw;border-radius:50%;background:rgba(255,255,255,.15)}
@@ -174,6 +186,19 @@ h2{font-family:'Black Han Sans',sans-serif;font-size:1.35rem;margin-bottom:4px;t
   </div>
 
   <!-- 광고 자리: 아래 div 안에 카카오 애드핏 광고 코드를 붙여넣으면 자동으로 표시됩니다 -->
+  <div class="card" id="extCard">
+    <div class="ribbon">NEW</div>
+    <div class="inner">
+      <img class="dog" src="shushu.png" alt="슈슈">
+      <div>
+        <h3>크롬 확장프로그램으로<br>더 빠르게! 🧩</h3>
+        <p>설치하면 보고 있는 페이지를 <b>클릭 한 번</b>에 단축할 수 있어요. 우클릭 메뉴와 내 링크 복사도 지원해요.</p>
+      </div>
+    </div>
+    <button class="btn btn-ext" id="extBtn">🐩 크롬에 추가하기</button>
+    <div class="soon" id="extSoon">🚧 지금 웹스토어 심사 중이에요 — 곧 만나요!</div>
+  </div>
+
   <div class="card ad-card" id="adCard"></div>
 
   <div class="card">
@@ -278,11 +303,35 @@ auth.onAuthStateChanged(async (user) => {
     if (isAdmin) await claimPendingLinks();
     loadList();
     applyExtensionParams();
+    setupExtCard();
   } else {
     document.getElementById("gate").style.display = "flex";
     document.getElementById("app").style.display = "none";
   }
 });
+
+/* ── 크롬 확장프로그램 안내 카드 ── */
+const EXT_ID = "hkkochimlbkohmccabljoedmpcoonegb";
+const EXT_LIVE = false; // 웹스토어 승인되면 true 로 변경
+const EXT_URL = "https://chromewebstore.google.com/detail/" + EXT_ID;
+
+function setupExtCard(){
+  const card = document.getElementById("extCard");
+  const isChrome = /Chrome/.test(navigator.userAgent) && !/Edg|OPR/.test(navigator.userAgent);
+  const installed = document.documentElement.hasAttribute("data-shu-ext");
+  const hidden = localStorage.getItem("shu_ext_hide") === "1";
+  if (!isChrome || installed || hidden) return; // 이미 설치했거나 크롬이 아니면 안 보임
+
+  document.getElementById("extSoon").style.display = EXT_LIVE ? "none" : "block";
+  const btn = document.getElementById("extBtn");
+  if (EXT_LIVE) {
+    btn.style.display = "flex";
+    btn.addEventListener("click", () => window.open(EXT_URL, "_blank"));
+  } else {
+    btn.style.display = "none";
+  }
+  card.classList.add("on");
+}
 
 /* 크롬 확장프로그램에서 전달된 주소 자동 입력 */
 function applyExtensionParams(){
