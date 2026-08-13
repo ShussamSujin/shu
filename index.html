@@ -4,118 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>SHU 단축주소 — shu.is</title>
+<title>SHU 단축주소 — 링크계의 슈퍼스타</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
-  --bg:#f5f6fc; --card:rgba(255,255,255,.86); --ink:#191e2e; --sub:#69718a;
-  --accent:#4a5cf0; --accent2:#8b3df2; --pink:#e85aad;
-  --line:#e7e9f4; --ok:#0ea472; --bad:#e0455a;
-  --grad:linear-gradient(94deg,var(--accent),var(--accent2) 60%,var(--pink));
-  --ring:0 0 0 4px rgba(74,92,240,.13);
+  --blue:#399df5; --blue-deep:#2277d8; --purple:#7a5cf5; --pink:#f5468e;
+  --yellow:#ffd23f; --ink:#141414; --paper:#ffffff; --ok:#0ea472; --bad:#e0455a;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:hidden}
-body::before{content:"";position:fixed;top:-220px;left:50%;transform:translateX(-72%);width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(74,92,240,.16),transparent 65%);pointer-events:none;z-index:0}
-body::after{content:"";position:fixed;top:-160px;left:50%;transform:translateX(6%);width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(232,90,173,.13),transparent 65%);pointer-events:none;z-index:0}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,'Malgun Gothic',sans-serif;background:var(--blue);color:var(--ink);min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;top:-30vh;left:-38vw;width:100vw;height:100vw;border-radius:50%;background:rgba(255,255,255,.14);pointer-events:none;z-index:0}
+body::after{content:"";position:fixed;bottom:-22vh;right:-30vw;width:80vw;height:80vw;border-radius:50%;background:rgba(122,92,245,.25);pointer-events:none;z-index:0}
 .wrap{max-width:640px;margin:0 auto;padding:36px 18px 60px;position:relative;z-index:1}
-header{text-align:center;margin:8px 0 30px}
-.logo{font-size:2.3rem;font-weight:900;letter-spacing:-.04em}
-.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.tag{color:var(--sub);font-size:.95rem;margin-top:8px;font-weight:500}
-.domainchip{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:5px 14px;border-radius:99px;background:#fff;border:1px solid var(--line);font-size:.8rem;font-weight:700;color:var(--accent);box-shadow:0 2px 10px rgba(25,30,46,.05)}
-.userbar{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:16px;font-size:.85rem;color:var(--sub)}
-.userbar img{width:28px;height:28px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 6px rgba(25,30,46,.15)}
-.userbar button{border:none;background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:.76rem;font-family:inherit;cursor:pointer;color:var(--sub);transition:.15s}
-.userbar button:hover{color:var(--bad);border-color:#f3cdd5}
-.card{background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);border-radius:24px;padding:26px;box-shadow:0 10px 34px rgba(25,30,46,.07);margin-bottom:20px;animation:rise .45s cubic-bezier(.2,.7,.3,1) both}
-.card:nth-of-type(2){animation-delay:.08s}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-label{display:block;font-weight:800;font-size:.88rem;margin:16px 0 7px}
+.hf{font-family:'Black Han Sans','Pretendard Variable',sans-serif;font-weight:400}
+/* ── 히어로 ── */
+header{text-align:center;margin:6px 0 30px;position:relative}
+.hero-logo{font-family:'Black Han Sans',sans-serif;font-size:4rem;line-height:1;color:#fff;letter-spacing:.02em;transform:rotate(-4deg);text-shadow:5px 5px 0 var(--ink);display:inline-block}
+.hero-logo span{color:var(--yellow)}
+.hero-sub{font-family:'Black Han Sans',sans-serif;font-size:1.7rem;color:#fff;transform:rotate(-4deg);text-shadow:3px 3px 0 var(--ink);margin-top:2px}
+.badge-star{display:inline-block;margin-top:16px;padding:7px 18px;background:#fff;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);font-family:'Black Han Sans',sans-serif;font-size:1rem;letter-spacing:.06em;transform:rotate(2deg);color:var(--ink)}
+.badge-star b{color:var(--pink)}
+.userbar{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:20px;font-size:.85rem;color:#fff;font-weight:700}
+.userbar img{width:30px;height:30px;border-radius:50%;border:2.5px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.userbar button{border:2.5px solid var(--ink);background:#fff;border-radius:0;padding:5px 12px;font-size:.76rem;font-weight:800;font-family:inherit;cursor:pointer;color:var(--ink);box-shadow:3px 3px 0 var(--ink);transition:.12s}
+.userbar button:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+/* ── 카드 ── */
+.card{background:var(--paper);border:3px solid var(--ink);border-radius:18px;padding:26px;box-shadow:8px 8px 0 rgba(20,20,20,.85);margin-bottom:24px;animation:rise .4s cubic-bezier(.2,.7,.3,1) both}
+.card:nth-of-type(2){animation-delay:.07s}
+@keyframes rise{from{opacity:0;transform:translateY(14px) rotate(.3deg)}to{opacity:1;transform:none}}
+label{display:block;font-weight:900;font-size:.9rem;margin:16px 0 7px}
 label:first-child{margin-top:0}
-input[type=text],input[type=url]{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;font-size:1rem;font-family:inherit;background:#fff;transition:border .15s,box-shadow .15s}
-input:focus{outline:none;border-color:var(--accent);box-shadow:var(--ring)}
-.hint{font-size:.78rem;color:var(--sub);margin-top:6px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:14px;padding:14px 20px;font-size:1rem;font-weight:800;font-family:inherit;cursor:pointer;transition:transform .12s,box-shadow .15s,opacity .15s}
-.btn:active{transform:scale(.97)}
-.btn-main{width:100%;margin-top:20px;color:#fff;background:var(--grad);background-size:150% 100%;box-shadow:0 9px 24px rgba(94,68,240,.32)}
-.btn-main:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(94,68,240,.4)}
-.btn-google{width:100%;background:#fff;border:1.5px solid var(--line);color:var(--ink);box-shadow:0 3px 12px rgba(25,30,46,.07)}
-.btn-google:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(25,30,46,.1)}
-.btn-sm{padding:8px 13px;font-size:.8rem;font-weight:700;border-radius:10px;background:#f0f2fa;color:#3d465e}
-.btn-sm:hover{background:#e4e8f6}
-.btn-danger{background:#fdeef1;color:var(--bad)}
-.btn-danger:hover{background:#fbdde3}
-.msg{margin-top:14px;padding:12px 15px;border-radius:13px;font-size:.88rem;font-weight:600;display:none}
-.msg.ok{display:block;background:#e5f7ef;color:var(--ok)}
-.msg.bad{display:block;background:#fdeef1;color:var(--bad)}
-.result{display:none;margin-top:18px;padding:20px;border-radius:16px;background:linear-gradient(135deg,#eef1ff,#faf0fb);border:1.5px solid #ded9ff;text-align:center}
-.result .short{font-size:1.35rem;font-weight:900;word-break:break-all;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
+input[type=text],input[type=url]{width:100%;padding:14px 16px;border:2.5px solid var(--ink);border-radius:12px;font-size:1rem;font-family:inherit;background:#fff;transition:box-shadow .12s,transform .12s}
+input:focus{outline:none;box-shadow:4px 4px 0 var(--blue);transform:translate(-1px,-1px)}
+.hint{font-size:.78rem;color:#666;margin-top:6px;font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:2.5px solid var(--ink);border-radius:12px;padding:13px 20px;font-size:1rem;font-weight:900;font-family:inherit;cursor:pointer;background:#fff;color:var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn-main{width:100%;margin-top:20px;color:#fff;background:var(--pink);font-size:1.1rem;padding:15px 20px}
+.btn-google{width:100%}
+.btn-sm{padding:8px 13px;font-size:.8rem;box-shadow:3px 3px 0 var(--ink);border-radius:10px;border-width:2px}
+.btn-sm:hover{box-shadow:4px 4px 0 var(--ink)}
+.btn-danger{background:#ffe3ec;color:var(--bad)}
+.msg{margin-top:14px;padding:12px 15px;border:2.5px solid var(--ink);border-radius:12px;font-size:.88rem;font-weight:700;display:none}
+.msg.ok{display:block;background:#c9f3e0;color:#0a6e4d}
+.msg.bad{display:block;background:#ffdbe7;color:#c22a52}
+.result{display:none;margin-top:18px;padding:20px;border:3px dashed var(--purple);border-radius:14px;background:#f4f0ff;text-align:center}
+.result .short{font-family:'Black Han Sans',sans-serif;font-size:1.5rem;word-break:break-all;color:var(--purple);margin-bottom:14px;transform:rotate(-1deg)}
 .result .row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-h2{font-size:1.08rem;font-weight:900;letter-spacing:-.02em;margin-bottom:4px}
-.count{color:var(--sub);font-weight:500;font-size:.82rem}
-.tabs{display:inline-flex;gap:4px;margin:12px 0 6px;background:#eef0f8;border-radius:12px;padding:4px}
-.tabs button{border:none;border-radius:9px;padding:7px 16px;font-size:.83rem;font-weight:800;font-family:inherit;cursor:pointer;background:transparent;color:var(--sub);transition:.15s}
-.tabs button.on{background:#fff;color:var(--accent);box-shadow:0 2px 8px rgba(25,30,46,.09)}
-.item{padding:16px 4px;border-bottom:1px solid var(--line)}
+h2{font-family:'Black Han Sans',sans-serif;font-size:1.35rem;margin-bottom:4px;transform:rotate(-1deg);display:inline-block}
+.count{color:#666;font-weight:700;font-size:.82rem;font-family:'Pretendard Variable',sans-serif}
+.tabs{display:inline-flex;gap:8px;margin:12px 0 6px}
+.tabs button{border:2.5px solid var(--ink);border-radius:10px;padding:7px 16px;font-size:.85rem;font-weight:900;font-family:inherit;cursor:pointer;background:#fff;color:var(--ink);box-shadow:3px 3px 0 var(--ink);transition:.12s}
+.tabs button.on{background:var(--purple);color:#fff;transform:rotate(-2deg)}
+.item{padding:16px 4px;border-bottom:2px dashed #d8d8d8}
 .item:last-child{border-bottom:none}
-.item .slug{font-weight:900;font-size:1.05rem;letter-spacing:-.01em;color:var(--accent);word-break:break-all}
-.item .url{font-size:.8rem;color:var(--sub);word-break:break-all;margin:4px 0 9px}
-.item .meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
-.chip{font-size:.7rem;font-weight:700;color:var(--sub);background:#f0f2fa;border-radius:99px;padding:3px 10px}
-.chip.hot{color:var(--accent);background:#e9ecff}
-.item .row{display:flex;gap:6px;flex-wrap:wrap}
-.empty{text-align:center;color:var(--sub);padding:30px 0;font-size:.9rem}
-/* 광고 자리 — 애드핏 코드가 들어가면 자동 표시됨 */
+.item .slug{font-family:'Black Han Sans',sans-serif;font-size:1.15rem;color:var(--blue-deep);word-break:break-all}
+.item .url{font-size:.8rem;color:#777;word-break:break-all;margin:4px 0 9px;font-weight:600}
+.item .meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+.chip{font-size:.72rem;font-weight:900;color:var(--ink);background:var(--yellow);border:2px solid var(--ink);border-radius:8px;padding:3px 10px;transform:rotate(-1.5deg)}
+.chip:nth-child(2n){transform:rotate(1.5deg);background:#fff}
+.item .row{display:flex;gap:7px;flex-wrap:wrap}
+.empty{text-align:center;color:#888;padding:30px 0;font-size:.9rem;font-weight:700}
 .ad-card{padding:12px;text-align:center;display:none}
-/* 로그인 게이트 */
-#gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:50;overflow:hidden}
-#gate::before{content:"";position:absolute;top:-200px;left:50%;transform:translateX(-70%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(74,92,240,.17),transparent 65%)}
-#gate::after{content:"";position:absolute;bottom:-220px;left:50%;transform:translateX(4%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,90,173,.14),transparent 65%)}
-#gate .card{width:min(92vw,400px);text-align:center;position:relative;z-index:1;padding:38px 30px}
-#gate .gemoji{font-size:3rem;margin-bottom:10px;display:inline-block;animation:bob 2.6s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-#gate .logo{font-size:1.9rem;margin-bottom:4px}
-#gate .tag{margin-bottom:14px}
-.showcase{display:inline-block;margin:2px auto 20px;padding:10px 22px;border-radius:16px;background:linear-gradient(135deg,#eef1ff,#faf0fb);border:1.5px solid #ded9ff;font-weight:900;font-size:1.25rem;letter-spacing:-.02em;color:#3d465e}
-.showcase b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;transition:opacity .25s}
-.showcase-cap{font-size:.75rem;color:var(--sub);font-weight:600;margin-top:-14px;margin-bottom:18px}
-/* 모달 */
-#qrModal,#policyModal{position:fixed;inset:0;background:rgba(20,24,40,.55);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:60;padding:16px}
+/* ── 로그인 게이트 ── */
+#gate{position:fixed;inset:0;background:var(--blue);display:flex;align-items:center;justify-content:center;z-index:50;overflow:hidden}
+#gate::before{content:"";position:absolute;top:-28vh;left:-30vw;width:95vw;height:95vw;border-radius:50%;background:rgba(255,255,255,.15)}
+#gate::after{content:"";position:absolute;bottom:-24vh;right:-26vw;width:75vw;height:75vw;border-radius:50%;background:rgba(122,92,245,.28)}
+.sticker{position:absolute;font-size:2.4rem;z-index:1;animation:float 3.4s ease-in-out infinite;filter:drop-shadow(3px 3px 0 rgba(20,20,20,.4))}
+.sticker.s1{top:12%;left:12%;animation-delay:0s}
+.sticker.s2{top:18%;right:13%;animation-delay:.8s;font-size:2rem}
+.sticker.s3{bottom:20%;left:15%;animation-delay:1.6s;font-size:2rem}
+.sticker.s4{bottom:14%;right:12%;animation-delay:.4s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-12px) rotate(6deg)}}
+#gate .card{width:min(92vw,410px);text-align:center;position:relative;z-index:2;padding:36px 28px;transform:rotate(-.6deg)}
+#gate .glogo{font-family:'Black Han Sans',sans-serif;font-size:3rem;line-height:1;color:var(--blue-deep);letter-spacing:.02em;transform:rotate(-3deg);text-shadow:3px 3px 0 rgba(20,20,20,.9);-webkit-text-stroke:1px var(--ink)}
+#gate .glogo span{color:var(--pink)}
+#gate .gsub{font-family:'Black Han Sans',sans-serif;font-size:1.3rem;margin:2px 0 4px;transform:rotate(-3deg)}
+#gate .gbadge{display:inline-block;margin:8px 0 16px;padding:5px 14px;background:var(--yellow);border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);font-family:'Black Han Sans',sans-serif;font-size:.85rem;letter-spacing:.05em;transform:rotate(1.5deg)}
+.showcase{display:inline-block;margin:2px auto 6px;padding:10px 20px;border:2.5px solid var(--ink);border-radius:14px;background:#eef6ff;box-shadow:4px 4px 0 var(--ink);font-family:'Black Han Sans',sans-serif;font-size:1.3rem;transform:rotate(-1deg)}
+.showcase b{color:var(--pink);transition:opacity .25s}
+.showcase-cap{font-size:.76rem;color:#555;font-weight:800;margin:10px 0 18px}
+/* ── 모달 ── */
+#qrModal,#policyModal{position:fixed;inset:0;background:rgba(20,20,20,.6);display:none;align-items:center;justify-content:center;z-index:60;padding:16px}
 #qrModal .card{width:min(92vw,340px);text-align:center;margin:0}
-#qrModal img{width:240px;height:240px;border-radius:14px;margin:12px 0;box-shadow:0 6px 20px rgba(25,30,46,.12)}
-#qrModal .short{font-weight:900;color:var(--accent);word-break:break-all;font-size:.95rem}
+#qrModal img{width:240px;height:240px;border:3px solid var(--ink);border-radius:12px;margin:12px 0;box-shadow:5px 5px 0 rgba(20,20,20,.5)}
+#qrModal .short{font-family:'Black Han Sans',sans-serif;color:var(--blue-deep);word-break:break-all;font-size:1rem}
 #policyModal{z-index:70}
 #policyModal .card{width:min(94vw,560px);max-height:84vh;overflow-y:auto;margin:0;text-align:left}
-#policyModal h3{font-size:1.02rem;font-weight:900;margin:20px 0 8px}
+#policyModal h3{font-family:'Black Han Sans',sans-serif;font-size:1.1rem;margin:20px 0 8px}
 #policyModal h3:first-child{margin-top:0}
-#policyModal p,#policyModal li{font-size:.85rem;color:var(--ink);line-height:1.75}
+#policyModal p,#policyModal li{font-size:.85rem;line-height:1.75}
 #policyModal ol,#policyModal ul{padding-left:20px}
-#policyModal .sub{color:var(--sub)}
-/* 푸터 */
-.foot{text-align:center;font-size:.75rem;color:var(--sub);line-height:2;padding:28px 12px 0}
-.foot a{color:var(--sub);text-decoration:none;border-bottom:1px dotted #b9bfd4;transition:.15s}
-.foot a:hover{color:var(--accent);border-color:var(--accent)}
-#gate .foot{position:absolute;bottom:18px;left:0;right:0;padding:0 12px;z-index:1}
-.spin{display:inline-block;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-4px}
+#policyModal .sub{color:#777}
+/* ── 푸터 ── */
+.foot{text-align:center;font-size:.76rem;color:rgba(255,255,255,.95);line-height:2;padding:28px 12px 0;font-weight:700;text-shadow:1px 1px 0 rgba(20,20,20,.35)}
+.foot a{color:#fff;text-decoration:none;border-bottom:2px dotted rgba(255,255,255,.7)}
+.foot a:hover{color:var(--yellow);border-color:var(--yellow)}
+#gate .foot{position:absolute;bottom:16px;left:0;right:0;padding:0 12px;z-index:2}
+.spin{display:inline-block;width:18px;height:18px;border:3px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-4px}
 @keyframes sp{to{transform:rotate(360deg)}}
+@media (max-width:480px){.hero-logo{font-size:3rem}.sticker{display:none}}
 </style>
 </head>
 <body>
 
 <div id="gate">
+  <span class="sticker s1">🛹</span>
+  <span class="sticker s2">⚡</span>
+  <span class="sticker s3">✨</span>
+  <span class="sticker s4">🔗</span>
   <div class="card">
-    <span class="gemoji">🔗</span>
-    <div class="logo"><b>SHU</b> 단축주소</div>
-    <div class="tag">shu.is — 긴 주소를 짧고 예쁘게</div>
+    <div class="glogo">SHU<span>!</span></div>
+    <div class="gsub">단축주소</div><br>
+    <div class="gbadge">⭐ LINK <b style="color:var(--pink)">SUPERSTAR</b> ⭐</div><br>
     <div class="showcase">shu.is/<b id="exWord">급식</b></div>
-    <div class="showcase-cap">✨ 이렇게 <b>한글 주소</b>도 만들 수 있어요</div>
+    <div class="showcase-cap">✨ 한글도! 숫자도! 내 맘대로 단축주소</div>
     <button class="btn btn-google" onclick="doLogin()">
       <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 40.2 44 35 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
       구글 계정으로 로그인
     </button>
-    <div class="hint" style="margin-top:16px">로그인하면 나만의 단축주소를 만들고 관리할 수 있어요</div>
+    <div class="hint" style="margin-top:14px">로그인하면 나만의 단축주소를 만들고 관리할 수 있어요</div>
     <div class="msg bad" id="gateMsg" style="display:none"></div>
   </div>
   <div class="foot">
@@ -127,9 +139,9 @@ h2{font-size:1.08rem;font-weight:900;letter-spacing:-.02em;margin-bottom:4px}
 
 <div class="wrap" id="app" style="display:none">
   <header>
-    <div class="logo">🔗 <b>SHU</b> 단축주소</div>
-    <div class="tag">긴 주소를 짧고 예쁘게 — 한글 주소도 OK</div>
-    <div class="domainchip">✦ shu.is</div>
+    <div class="hero-logo">SHU<span>!</span></div>
+    <div class="hero-sub">단축주소</div><br>
+    <div class="badge-star">⭐ LINK <b>SUPERSTAR</b> ⭐</div>
     <div class="userbar">
       <img id="uPhoto" src="" alt="" referrerpolicy="no-referrer" style="display:none">
       <span id="uName"></span>
@@ -140,10 +152,10 @@ h2{font-size:1.08rem;font-weight:900;letter-spacing:-.02em;margin-bottom:4px}
   <div class="card">
     <label for="longUrl">긴 주소</label>
     <input type="url" id="longUrl" placeholder="https:// 로 시작하는 긴 주소를 붙여넣으세요" autocomplete="off">
-    <label for="slug">단축 이름 <span style="font-weight:500;color:var(--sub)">(선택)</span></label>
-    <input type="text" id="slug" placeholder="비워두면 자동으로 만들어져요 · 한글 가능 (예: 급식)" autocomplete="off">
+    <label for="slug">단축 이름 <span style="font-weight:600;color:#888">(선택)</span></label>
+    <input type="text" id="slug" placeholder="비워두면 자동 생성! 한글·숫자 다 돼요 (예: 급식, 2026)" autocomplete="off">
     <div class="hint">사용 가능한 글자: 한글, 영문, 숫자, 하이픈(-), 밑줄(_)</div>
-    <button class="btn btn-main" id="makeBtn" onclick="makeLink()">✨ 단축주소 만들기</button>
+    <button class="btn btn-main" id="makeBtn" onclick="makeLink()">🛹 슝~ 단축하기!</button>
     <div class="msg" id="makeMsg"></div>
     <div class="result" id="result">
       <div class="short" id="resultUrl"></div>
@@ -159,7 +171,7 @@ h2{font-size:1.08rem;font-weight:900;letter-spacing:-.02em;margin-bottom:4px}
   <div class="card ad-card" id="adCard"></div>
 
   <div class="card">
-    <h2>단축주소 목록 <span class="count" id="linkCount"></span></h2>
+    <h2>내 링크 컬렉션</h2> <span class="count" id="linkCount"></span>
     <div class="tabs" id="adminTabs" style="display:none">
       <button id="tabMine" class="on" onclick="setTab('mine')">내 링크</button>
       <button id="tabAll" onclick="setTab('all')">전체 링크</button>
@@ -225,7 +237,7 @@ const auth = firebase.auth();
 const LINKS = firebase.database().ref("shu/links");
 const ADMIN_EMAILS = ["gajungssamzzang@gmail.com", "admin@gegseoul.kr"];
 const CUSTOM_DOMAIN = "shu.is";
-const BASE = "https://" + CUSTOM_DOMAIN;
+const BASE = "http://" + CUSTOM_DOMAIN; // 임시 http — HTTPS 인증서 발급 후 https로 되돌릴 것
 
 let me = null, isAdmin = false, tab = "mine";
 let lastShort = "", lastSlug = "", qrShort = "";
@@ -327,7 +339,7 @@ async function makeLink(){
     document.getElementById("longUrl").value = ""; document.getElementById("slug").value = "";
     loadList();
   } catch(e) { showMsg(e.message || "오류가 났어요. 인터넷 연결을 확인해 주세요","bad"); }
-  finally { btn.disabled = false; btn.textContent = "✨ 단축주소 만들기"; }
+  finally { btn.disabled = false; btn.textContent = "🛹 슝~ 단축하기!"; }
 }
 function showMsg(t,k){ const m=document.getElementById("makeMsg"); m.textContent=t; m.className="msg "+k; }
 
@@ -346,7 +358,7 @@ async function loadList(){
     const data = snap.val() || {};
     const items = Object.entries(data).sort((a,b)=>(b[1].created||"").localeCompare(a[1].created||""));
     document.getElementById("linkCount").textContent = items.length ? `${items.length}개` : "";
-    if (!items.length) { box.innerHTML = '<div class="empty">아직 만든 단축주소가 없어요</div>'; return; }
+    if (!items.length) { box.innerHTML = '<div class="empty">아직 만든 단축주소가 없어요 — 첫 링크의 슈퍼스타가 되어보세요! ⭐</div>'; return; }
     box.innerHTML = "";
     for (const [slug, v] of items) {
       const mine = v.owner === me.uid;
@@ -354,7 +366,7 @@ async function loadList(){
       const s = document.createElement("div"); s.className = "slug"; s.textContent = shortUrlOf(slug).replace(/^https?:\/\//,"");
       const u = document.createElement("div"); u.className = "url"; u.textContent = "→ " + v.url;
       const m = document.createElement("div"); m.className = "meta";
-      const c1 = document.createElement("span"); c1.className = "chip" + ((v.clicks||0) > 0 ? " hot" : ""); c1.textContent = `👆 ${v.clicks||0}회`;
+      const c1 = document.createElement("span"); c1.className = "chip"; c1.textContent = `👆 ${v.clicks||0}회`;
       const c2 = document.createElement("span"); c2.className = "chip"; c2.textContent = (v.created||"").slice(0,10);
       m.append(c1, c2);
       if (isAdmin && tab === "all") { const c3 = document.createElement("span"); c3.className = "chip"; c3.textContent = v.ownerName || "?"; m.append(c3); }
@@ -402,7 +414,7 @@ async function downloadQR(){
 }
 
 /* ── 로그인 화면 한글 주소 쇼케이스 ── */
-const EX_WORDS = ["급식", "상담신청", "알림장", "가정통신문", "수행평가", "체험학습", "동아리"];
+const EX_WORDS = ["급식", "상담신청", "알림장", "가정통신문", "수행평가", "체험학습", "2026", "1반"];
 let exIdx = 0;
 setInterval(() => {
   const el = document.getElementById("exWord");
