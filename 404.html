@@ -25,10 +25,34 @@ a{color:#4a5cf0;font-weight:800;text-decoration:none}
 </head>
 <body>
 <div class="box">
-  <div id="go"><div class="spin"></div><h1>이동하고 있어요…</h1><p id="slugShow"></p></div>
-  <div id="nf"><div class="big">🤔</div><h1>존재하지 않는 단축주소예요</h1><p id="nfSlug"></p><p style="margin-top:14px"><a href="javascript:history.back()">← 뒤로 가기</a></p></div>
-  <div class="brand"><b>SHU</b> · shu.is</div>
+  <svg class="shushu" viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg" aria-label="마스코트 슈슈" style="width:110px;display:block;margin:0 auto 6px">
+    <ellipse cx="100" cy="180" rx="54" ry="7" fill="rgba(20,20,20,.12)"/>
+    <g class="tail"><circle cx="147" cy="140" r="13" fill="#edd3ae" stroke="#141414" stroke-width="3.5"/></g>
+    <ellipse cx="100" cy="147" rx="38" ry="33" fill="#edd3ae" stroke="#141414" stroke-width="3.5"/>
+    <path d="M85 150 v20 a6.5 6.5 0 0 0 13 0 v-20" fill="#f2debd" stroke="#141414" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M102 150 v20 a6.5 6.5 0 0 0 13 0 v-20" fill="#f2debd" stroke="#141414" stroke-width="3.5" stroke-linejoin="round"/>
+    <ellipse cx="53" cy="90" rx="18" ry="29" fill="#e3c493" stroke="#141414" stroke-width="3.5" transform="rotate(16 53 90)"/>
+    <ellipse cx="147" cy="90" rx="18" ry="29" fill="#e3c493" stroke="#141414" stroke-width="3.5" transform="rotate(-16 147 90)"/>
+    <ellipse cx="100" cy="50" rx="46" ry="35" fill="#edd3ae" stroke="#141414" stroke-width="3.5"/>
+    <ellipse cx="100" cy="88" rx="35" ry="29" fill="#f2debd" stroke="#141414" stroke-width="3.5"/>
+    <circle cx="87" cy="84" r="4.6" fill="#141414"/><circle cx="88.6" cy="82.4" r="1.5" fill="#fff"/>
+    <circle cx="113" cy="84" r="4.6" fill="#141414"/><circle cx="114.6" cy="82.4" r="1.5" fill="#fff"/>
+    <ellipse cx="100" cy="97" rx="6.5" ry="5" fill="#141414"/>
+    <path d="M93 106 q7 6 14 0" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round"/>
+    <path d="M108 108 L127 118" stroke="#141414" stroke-width="2.5"/>
+    <g transform="rotate(9 145 124)">
+      <rect x="124" y="112" width="42" height="23" rx="5" fill="#fff" stroke="#141414" stroke-width="3"/>
+      <text x="145" y="128.5" text-anchor="middle" font-family="'Black Han Sans','Malgun Gothic',sans-serif" font-size="11" fill="#f5468e">shu.is</text>
+    </g>
+  </svg>
+  <div id="go"><div class="spin"></div><h1>슈슈가 데려다주고 있어요… 슝~ 🐾</h1><p id="slugShow"></p></div>
+  <div id="nf"><h1>슈슈가 킁킁… 없는 주소예요 🤔</h1><p id="nfSlug"></p><p style="margin-top:14px"><a href="javascript:history.back()">← 뒤로 가기</a></p></div>
+  <div class="brand"><b>SHU</b> · shu.is · 🌈 in memory of 슈슈</div>
 </div>
+<style>
+.shushu .tail{animation:wag .9s ease-in-out infinite;transform-origin:143px 146px}
+@keyframes wag{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(16deg)}}
+</style>
 <script>
 const DB = "https://dobble-game-by-sujin-default-rtdb.asia-southeast1.firebasedatabase.app/shu/links";
 (async function(){
