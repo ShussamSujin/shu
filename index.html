@@ -64,6 +64,19 @@ h2{font-size:1.05rem;margin-bottom:4px}
 #qrModal .short{font-weight:800;color:var(--accent);word-break:break-all;font-size:.95rem}
 .spin{display:inline-block;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-4px}
 @keyframes sp{to{transform:rotate(360deg)}}
+/* 푸터 */
+.foot{text-align:center;font-size:.76rem;color:var(--sub);line-height:1.9;padding:26px 12px 0}
+.foot a{color:var(--sub);text-decoration:none;border-bottom:1px dotted var(--sub)}
+.foot a:hover{color:var(--accent);border-color:var(--accent)}
+#gate .foot{position:absolute;bottom:18px;left:0;right:0;padding:0 12px}
+/* 방침 모달 */
+#policyModal{position:fixed;inset:0;background:rgba(20,24,40,.55);display:none;align-items:center;justify-content:center;z-index:70;padding:16px}
+#policyModal .card{width:min(94vw,560px);max-height:84vh;overflow-y:auto;margin:0;text-align:left}
+#policyModal h3{font-size:1.05rem;margin:18px 0 8px}
+#policyModal h3:first-child{margin-top:0}
+#policyModal p,#policyModal li{font-size:.86rem;color:var(--ink);line-height:1.7}
+#policyModal ol{padding-left:20px}
+#policyModal .sub{color:var(--sub)}
 </style>
 </head>
 <body>
@@ -78,6 +91,11 @@ h2{font-size:1.05rem;margin-bottom:4px}
     </button>
     <div class="hint" style="margin-top:14px">로그인하면 나만의 단축주소를 만들고 관리할 수 있어요</div>
     <div class="msg bad" id="gateMsg" style="display:none"></div>
+  </div>
+  <div class="foot">
+    ⓒ 2026 Google Certified Trainer &amp; Innovator <b>Sujin Lee</b><br>
+    문의: <a href="mailto:gajungssamzzang@gmail.com">gajungssamzzang@gmail.com</a> ·
+    <a href="javascript:void(0)" onclick="document.getElementById('policyModal').style.display='flex'">보안 안내 · 개인정보 처리방침</a>
   </div>
 </div>
 
@@ -117,6 +135,37 @@ h2{font-size:1.05rem;margin-bottom:4px}
       <button id="tabAll" onclick="setTab('all')">전체 링크</button>
     </div>
     <div id="list"><div class="empty">불러오는 중…</div></div>
+  </div>
+
+  <div class="foot">
+    ⓒ 2026 Google Certified Trainer &amp; Innovator <b>Sujin Lee</b><br>
+    문의: <a href="mailto:gajungssamzzang@gmail.com">gajungssamzzang@gmail.com</a> ·
+    <a href="javascript:void(0)" onclick="document.getElementById('policyModal').style.display='flex'">보안 안내 · 개인정보 처리방침</a>
+  </div>
+</div>
+
+<div id="policyModal" onclick="if(event.target===this)this.style.display='none'">
+  <div class="card">
+    <h3>🔒 보안 안내</h3>
+    <ul style="padding-left:20px">
+      <li>로그인은 <b>구글 OAuth 2.0</b>으로 처리되며, 이 사이트는 비밀번호를 저장하거나 볼 수 없습니다.</li>
+      <li>모든 데이터는 <b>Google Firebase</b>에 암호화 전송(HTTPS)되어 저장됩니다.</li>
+      <li>서버 측 보안 규칙에 따라 <b>본인이 만든 단축주소만</b> 수정·삭제할 수 있으며, 로그인하지 않은 상태의 데이터 변경은 서버가 차단합니다.</li>
+    </ul>
+    <h3>📋 개인정보 처리방침</h3>
+    <ol>
+      <li><b>수집 항목</b><br>
+        · 로그인 사용자: 구글 계정의 이름, 이메일, 프로필 사진(구글이 제공하는 기본 정보)과 사용자가 만든 단축주소 정보(원본 주소, 생성일시)<br>
+        · 단축주소 방문자: <b>개인정보를 수집하지 않습니다.</b> 링크별 클릭 횟수만 익명으로 집계됩니다.</li>
+      <li><b>이용 목적</b><br>단축주소의 생성·관리와 소유자 확인 목적으로만 사용하며, 그 외 용도로 이용하지 않습니다.</li>
+      <li><b>보관 및 파기</b><br>데이터는 Google Firebase(아시아 리전)에 보관되며, 사용자가 단축주소를 삭제하면 즉시 파기됩니다. 계정 정보 삭제를 원하시면 아래 문의처로 요청해 주세요.</li>
+      <li><b>제3자 제공</b><br>개인정보를 제3자에게 제공하지 않습니다. 단, QR코드 생성 시 단축주소 문자열이 QR 생성 서비스(qrserver.com)에 전달될 수 있습니다(개인정보 미포함).</li>
+      <li><b>문의처</b><br>gajungssamzzang@gmail.com</li>
+    </ol>
+    <p class="sub" style="margin-top:12px">시행일: 2026년 8월 13일</p>
+    <div style="text-align:center;margin-top:14px">
+      <button class="btn btn-sm" onclick="document.getElementById('policyModal').style.display='none'">닫기</button>
+    </div>
   </div>
 </div>
 
