@@ -252,7 +252,7 @@ auth.onAuthStateChanged(async (user) => {
     document.getElementById("adminTabs").style.display = isAdmin ? "inline-flex" : "none";
     const ad = document.getElementById("adCard");
     if (ad && ad.children.length > 0) ad.style.display = "block";
-    if (isAdmin) claimPendingLinks();
+    if (isAdmin) await claimPendingLinks();
     loadList();
   } else {
     document.getElementById("gate").style.display = "flex";
