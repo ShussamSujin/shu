@@ -14,19 +14,24 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
 .wrap{max-width:680px;margin:0 auto;padding:28px 16px 80px}
-header{text-align:center;margin:18px 0 26px}
+header{text-align:center;margin:18px 0 26px;position:relative}
 .logo{font-size:2rem;font-weight:800;letter-spacing:-.02em}
 .logo b{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .tag{color:var(--sub);font-size:.92rem;margin-top:6px}
+.userbar{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;font-size:.85rem;color:var(--sub)}
+.userbar img{width:26px;height:26px;border-radius:50%}
+.userbar button{border:none;background:#eef0f8;border-radius:8px;padding:5px 10px;font-size:.78rem;font-family:inherit;cursor:pointer;color:var(--sub)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 4px 20px rgba(28,35,51,.05);margin-bottom:18px}
 label{display:block;font-weight:700;font-size:.9rem;margin:14px 0 6px}
 label:first-child{margin-top:0}
-input[type=text],input[type=url],input[type=password]{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:1rem;font-family:inherit;background:#fafbfe;transition:border .15s}
+input[type=text],input[type=url]{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:1rem;font-family:inherit;background:#fafbfe;transition:border .15s}
 input:focus{outline:none;border-color:var(--accent);background:#fff}
 .hint{font-size:.8rem;color:var(--sub);margin-top:5px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:none;border-radius:12px;padding:13px 20px;font-size:1rem;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .1s,opacity .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:12px;padding:13px 20px;font-size:1rem;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .1s,opacity .15s}
 .btn:active{transform:scale(.97)}
 .btn-main{width:100%;margin-top:18px;color:#fff;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.btn-google{width:100%;background:#fff;border:1.5px solid var(--line);color:var(--ink);box-shadow:0 2px 8px rgba(28,35,51,.06)}
+.btn-google:hover{background:#fafbfe}
 .btn-sm{padding:7px 12px;font-size:.82rem;border-radius:9px;background:#eef0f8;color:var(--ink)}
 .btn-sm:hover{background:#e2e6f5}
 .btn-danger{background:#fdeef1;color:var(--bad)}
@@ -39,6 +44,9 @@ input:focus{outline:none;border-color:var(--accent);background:#fff}
 .result .row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 h2{font-size:1.05rem;margin-bottom:4px}
 .count{color:var(--sub);font-weight:400;font-size:.85rem}
+.tabs{display:flex;gap:6px;margin:10px 0 4px}
+.tabs button{border:none;border-radius:9px;padding:7px 14px;font-size:.85rem;font-weight:700;font-family:inherit;cursor:pointer;background:#eef0f8;color:var(--sub)}
+.tabs button.on{background:var(--accent);color:#fff}
 .item{padding:14px 2px;border-bottom:1px solid var(--line)}
 .item:last-child{border-bottom:none}
 .item .slug{font-weight:800;font-size:1.02rem;color:var(--accent);word-break:break-all}
@@ -46,11 +54,10 @@ h2{font-size:1.05rem;margin-bottom:4px}
 .item .meta{font-size:.75rem;color:var(--sub);margin-bottom:8px}
 .item .row{display:flex;gap:6px;flex-wrap:wrap}
 .empty{text-align:center;color:var(--sub);padding:26px 0;font-size:.9rem}
-/* 비밀번호 게이트 */
 #gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:50}
-#gate .card{width:min(92vw,360px);text-align:center}
-#gate .logo{font-size:1.6rem;margin-bottom:14px}
-/* QR 모달 */
+#gate .card{width:min(92vw,380px);text-align:center}
+#gate .logo{font-size:1.6rem;margin-bottom:6px}
+#gate .tag{margin-bottom:18px}
 #qrModal{position:fixed;inset:0;background:rgba(20,24,40,.55);display:none;align-items:center;justify-content:center;z-index:60;padding:16px}
 #qrModal .card{width:min(92vw,340px);text-align:center;margin:0}
 #qrModal img{width:240px;height:240px;border-radius:10px;margin:10px 0}
@@ -64,9 +71,13 @@ h2{font-size:1.05rem;margin-bottom:4px}
 <div id="gate">
   <div class="card">
     <div class="logo">🔗 <b>SHU</b> 단축주소</div>
-    <input type="password" id="gatePw" placeholder="비밀번호" autocomplete="off">
-    <button class="btn btn-main" onclick="tryGate()">들어가기</button>
-    <div class="msg" id="gateMsg">비밀번호가 달라요</div>
+    <div class="tag">shu.is — 긴 주소를 짧고 예쁘게</div>
+    <button class="btn btn-google" onclick="doLogin()">
+      <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 40.2 44 35 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+      구글 계정으로 로그인
+    </button>
+    <div class="hint" style="margin-top:14px">로그인하면 나만의 단축주소를 만들고 관리할 수 있어요</div>
+    <div class="msg bad" id="gateMsg" style="display:none"></div>
   </div>
 </div>
 
@@ -74,6 +85,11 @@ h2{font-size:1.05rem;margin-bottom:4px}
   <header>
     <div class="logo">🔗 <b>SHU</b> 단축주소</div>
     <div class="tag">긴 주소를 짧고 예쁘게 — 한글 주소도 OK</div>
+    <div class="userbar">
+      <img id="uPhoto" src="" alt="" referrerpolicy="no-referrer" style="display:none">
+      <span id="uName"></span>
+      <button onclick="doLogout()">로그아웃</button>
+    </div>
   </header>
 
   <div class="card">
@@ -95,7 +111,11 @@ h2{font-size:1.05rem;margin-bottom:4px}
   </div>
 
   <div class="card">
-    <h2>내 단축주소 <span class="count" id="linkCount"></span></h2>
+    <h2>단축주소 목록 <span class="count" id="linkCount"></span></h2>
+    <div class="tabs" id="adminTabs" style="display:none">
+      <button id="tabMine" class="on" onclick="setTab('mine')">내 링크</button>
+      <button id="tabAll" onclick="setTab('all')">전체 링크</button>
+    </div>
     <div id="list"><div class="empty">불러오는 중…</div></div>
   </div>
 </div>
@@ -111,137 +131,190 @@ h2{font-size:1.05rem;margin-bottom:4px}
   </div>
 </div>
 
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
 <script>
-const DB = "https://dobble-game-by-sujin-default-rtdb.asia-southeast1.firebasedatabase.app/konfesta31/shulinks";
-const PW = "digital31";
+firebase.initializeApp({
+  apiKey: "AIzaSyARMNDkYM-5BSeaJBUig25iAg3XxCQr8SI",
+  authDomain: "dobble-game-by-sujin.firebaseapp.com",
+  databaseURL: "https://dobble-game-by-sujin-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "dobble-game-by-sujin",
+  appId: "1:980035129396:web:997e4e7e3a27fa0894ba61"
+});
+const auth = firebase.auth();
+const LINKS = firebase.database().ref("shu/links");
+const ADMIN_EMAILS = ["gajungssamzzang@gmail.com", "sujinlee@gegseoul.kr"];
 const CUSTOM_DOMAIN = "shu.is";
-const BASE = CUSTOM_DOMAIN
-  ? "https://" + CUSTOM_DOMAIN
-  : (location.hostname.endsWith("github.io")
-      ? location.origin + location.pathname.replace(/\/(index\.html)?$/, "")
-      : location.origin);
+const BASE = "https://" + CUSTOM_DOMAIN;
 
+let me = null, isAdmin = false, tab = "mine";
 let lastShort = "", lastSlug = "", qrShort = "";
 
-/* ── 비밀번호 ── */
-function tryGate(){
-  if(document.getElementById("gatePw").value === PW){
-    sessionStorage.setItem("shu_ok","1"); openApp();
-  } else document.getElementById("gateMsg").classList.add("bad");
+/* ── 로그인 ── */
+async function doLogin(){
+  const provider = new firebase.auth.GoogleAuthProvider();
+  try { await auth.signInWithPopup(provider); }
+  catch(e){
+    if (e.code === "auth/popup-blocked" || e.code === "auth/operation-not-supported-in-this-environment" || e.code === "auth/cancelled-popup-request") {
+      auth.signInWithRedirect(provider);
+    } else if (e.code !== "auth/popup-closed-by-user") {
+      const m = document.getElementById("gateMsg");
+      m.textContent = "로그인에 실패했어요: " + (e.message || e.code);
+      m.style.display = "block"; m.className = "msg bad";
+    }
+  }
 }
-function openApp(){
-  document.getElementById("gate").style.display="none";
-  document.getElementById("app").style.display="block";
-  loadList();
-}
-document.getElementById("gatePw").addEventListener("keydown",e=>{if(e.key==="Enter")tryGate();});
-if(sessionStorage.getItem("shu_ok")==="1") openApp();
+function doLogout(){ auth.signOut(); }
 
-/* ── 데이터 ── */
-async function dbGet(p){ const r=await fetch(`${DB}/${p}.json`); return r.json(); }
-async function dbPut(p,d){ const r=await fetch(`${DB}/${p}.json`,{method:"PUT",body:JSON.stringify(d)}); if(!r.ok)throw new Error("저장 실패"); }
-async function dbDel(p){ await fetch(`${DB}/${p}.json`,{method:"DELETE"}); }
+auth.onAuthStateChanged(async (user) => {
+  me = user;
+  if (user) {
+    isAdmin = ADMIN_EMAILS.includes(user.email || "");
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("app").style.display = "block";
+    document.getElementById("uName").textContent = (user.displayName || user.email) + (isAdmin ? " (관리자)" : "");
+    if (user.photoURL) { const p = document.getElementById("uPhoto"); p.src = user.photoURL; p.style.display = "inline"; }
+    document.getElementById("adminTabs").style.display = isAdmin ? "flex" : "none";
+    if (isAdmin) claimPendingLinks();
+    loadList();
+  } else {
+    document.getElementById("gate").style.display = "flex";
+    document.getElementById("app").style.display = "none";
+  }
+});
+
+/* 관리자 최초 로그인 시 이전 버전 링크 소유권 인수 */
+async function claimPendingLinks(){
+  try {
+    const snap = await LINKS.orderByChild("owner").equalTo("PENDING_ADMIN").once("value");
+    const data = snap.val() || {};
+    for (const slug of Object.keys(data)) {
+      await LINKS.child(slug).update({ owner: me.uid, ownerName: me.displayName || "관리자" });
+    }
+  } catch(e){}
+}
 
 /* ── 슬러그 ── */
-const CHARS="23456789abcdefghjkmnpqrstuvwxyz";
+const CHARS = "23456789abcdefghjkmnpqrstuvwxyz";
 function randomSlug(){ let s=""; for(let i=0;i<4;i++) s+=CHARS[Math.floor(Math.random()*CHARS.length)]; return s; }
 function cleanSlug(s){
-  s=s.trim().replace(/\s+/g,"-");
-  if(/[.#$\[\]\/?%&=+]/.test(s)) return null;
-  if(s.length>40) return null;
+  s = s.trim().replace(/\s+/g,"-");
+  if (/[.#$\[\]\/?%&=+]/.test(s)) return null;
+  if (s.length > 40) return null;
   return s;
 }
 function shortUrlOf(slug){ return BASE + "/" + slug; }
 
 /* ── 만들기 ── */
 async function makeLink(){
-  const msg=document.getElementById("makeMsg"), btn=document.getElementById("makeBtn");
-  msg.className="msg"; document.getElementById("result").style.display="none";
-  let url=document.getElementById("longUrl").value.trim();
-  if(!url){ showMsg("긴 주소를 입력해 주세요","bad"); return; }
-  if(!/^https?:\/\//i.test(url)) url="https://"+url;
-  try{ new URL(url); }catch{ showMsg("주소 형식이 올바르지 않아요","bad"); return; }
+  const btn = document.getElementById("makeBtn");
+  document.getElementById("makeMsg").className = "msg";
+  document.getElementById("result").style.display = "none";
+  let url = document.getElementById("longUrl").value.trim();
+  if (!url) { showMsg("긴 주소를 입력해 주세요","bad"); return; }
+  if (!/^https?:\/\//i.test(url)) url = "https://" + url;
+  try { new URL(url); } catch { showMsg("주소 형식이 올바르지 않아요","bad"); return; }
 
-  let slug=document.getElementById("slug").value;
-  let isCustom = slug.trim()!=="";
-  if(isCustom){
-    slug=cleanSlug(slug);
-    if(!slug){ showMsg("단축 이름에 쓸 수 없는 글자가 있어요 ( . # $ [ ] / % ? & = + 및 40자 초과 불가 )","bad"); return; }
+  let slug = document.getElementById("slug").value;
+  const isCustom = slug.trim() !== "";
+  if (isCustom) {
+    slug = cleanSlug(slug);
+    if (!slug) { showMsg("단축 이름에 쓸 수 없는 글자가 있어요 ( . # $ [ ] / % ? & = + 및 40자 초과 불가 )","bad"); return; }
   }
 
-  btn.disabled=true; btn.innerHTML='<span class="spin"></span> 만드는 중…';
-  try{
-    if(!isCustom){
-      for(let i=0;i<5;i++){ slug=randomSlug(); if(!(await dbGet(encodeURIComponent(slug)))) break; slug=null; }
-      if(!slug) throw new Error("자동 생성 실패 — 다시 눌러 주세요");
+  btn.disabled = true; btn.innerHTML = '<span class="spin"></span> 만드는 중…';
+  try {
+    if (!isCustom) {
+      for (let i=0;i<5;i++) { slug = randomSlug(); if (!(await LINKS.child(slug).once("value")).exists()) break; slug = null; }
+      if (!slug) throw new Error("자동 생성 실패 — 다시 눌러 주세요");
     } else {
-      const ex=await dbGet(encodeURIComponent(slug));
-      if(ex){ showMsg(`"${slug}" 는 이미 사용 중이에요 (→ ${ex.url.slice(0,50)}…)`,"bad"); return; }
+      const ex = await LINKS.child(slug).once("value");
+      if (ex.exists()) { showMsg(`"${slug}" 는 이미 사용 중이에요`,"bad"); return; }
     }
-    await dbPut(encodeURIComponent(slug),{url:url,created:new Date().toISOString(),clicks:0});
-    lastSlug=slug; lastShort=shortUrlOf(slug);
-    document.getElementById("resultUrl").textContent=lastShort.replace(/^https?:\/\//,"");
-    document.getElementById("result").style.display="block";
+    await LINKS.child(slug).set({
+      url: url,
+      created: new Date().toISOString(),
+      clicks: 0,
+      owner: me.uid,
+      ownerName: me.displayName || me.email || ""
+    });
+    lastSlug = slug; lastShort = shortUrlOf(slug);
+    document.getElementById("resultUrl").textContent = lastShort.replace(/^https?:\/\//,"");
+    document.getElementById("result").style.display = "block";
     showMsg("완성! 아래 주소를 복사해서 쓰세요","ok");
-    document.getElementById("longUrl").value=""; document.getElementById("slug").value="";
+    document.getElementById("longUrl").value = ""; document.getElementById("slug").value = "";
     loadList();
-  }catch(e){ showMsg(e.message||"오류가 났어요. 인터넷 연결을 확인해 주세요","bad"); }
-  finally{ btn.disabled=false; btn.textContent="단축주소 만들기"; }
+  } catch(e) { showMsg(e.message || "오류가 났어요. 인터넷 연결을 확인해 주세요","bad"); }
+  finally { btn.disabled = false; btn.textContent = "단축주소 만들기"; }
 }
 function showMsg(t,k){ const m=document.getElementById("makeMsg"); m.textContent=t; m.className="msg "+k; }
 
 /* ── 목록 ── */
+function setTab(t){ tab=t;
+  document.getElementById("tabMine").className = t==="mine" ? "on" : "";
+  document.getElementById("tabAll").className = t==="all" ? "on" : "";
+  loadList();
+}
 async function loadList(){
-  const box=document.getElementById("list");
-  try{
-    const data=await dbGet("")||{};
-    const items=Object.entries(data).sort((a,b)=>(b[1].created||"").localeCompare(a[1].created||""));
-    document.getElementById("linkCount").textContent=items.length?`${items.length}개`:"";
-    if(!items.length){ box.innerHTML='<div class="empty">아직 만든 단축주소가 없어요</div>'; return; }
-    box.innerHTML="";
-    for(const [slug,v] of items){
-      const div=document.createElement("div"); div.className="item";
-      const s=document.createElement("div"); s.className="slug"; s.textContent=shortUrlOf(slug).replace(/^https?:\/\//,"");
-      const u=document.createElement("div"); u.className="url"; u.textContent="→ "+v.url;
-      const m=document.createElement("div"); m.className="meta";
-      m.textContent=`클릭 ${v.clicks||0}회 · ${(v.created||"").slice(0,10)}`;
-      const row=document.createElement("div"); row.className="row";
+  const box = document.getElementById("list");
+  try {
+    let snap;
+    if (isAdmin && tab === "all") snap = await LINKS.once("value");
+    else snap = await LINKS.orderByChild("owner").equalTo(me.uid).once("value");
+    const data = snap.val() || {};
+    const items = Object.entries(data).sort((a,b)=>(b[1].created||"").localeCompare(a[1].created||""));
+    document.getElementById("linkCount").textContent = items.length ? `${items.length}개` : "";
+    if (!items.length) { box.innerHTML = '<div class="empty">아직 만든 단축주소가 없어요</div>'; return; }
+    box.innerHTML = "";
+    for (const [slug, v] of items) {
+      const mine = v.owner === me.uid;
+      const div = document.createElement("div"); div.className = "item";
+      const s = document.createElement("div"); s.className = "slug"; s.textContent = shortUrlOf(slug).replace(/^https?:\/\//,"");
+      const u = document.createElement("div"); u.className = "url"; u.textContent = "→ " + v.url;
+      const m = document.createElement("div"); m.className = "meta";
+      m.textContent = `클릭 ${v.clicks||0}회 · ${(v.created||"").slice(0,10)}` + (isAdmin && tab==="all" ? ` · ${v.ownerName||"?"}` : "");
+      const row = document.createElement("div"); row.className = "row";
       row.append(
-        mkBtn("📋 복사","btn-sm",()=>copyText(shortUrlOf(slug),row.children[0])),
-        mkBtn("🔳 QR","btn-sm",()=>showQR(slug)),
-        mkBtn("✏️ 수정","btn-sm",async()=>{
-          const nu=prompt("새 목적지 주소를 입력하세요",v.url);
-          if(nu&&nu.trim()){ await fetch(`${DB}/${encodeURIComponent(slug)}.json`,{method:"PATCH",body:JSON.stringify({url:nu.trim()})}); loadList(); }
-        }),
-        mkBtn("🗑 삭제","btn-sm btn-danger",async()=>{
-          if(confirm(`"${slug}" 단축주소를 삭제할까요?`)){ await dbDel(encodeURIComponent(slug)); loadList(); }
-        })
+        mkBtn("📋 복사","btn-sm",function(){ copyText(shortUrlOf(slug), this); }),
+        mkBtn("🔳 QR","btn-sm",()=>showQR(slug))
       );
+      if (mine || isAdmin) {
+        row.append(
+          mkBtn("✏️ 수정","btn-sm",async()=>{
+            const nu = prompt("새 목적지 주소를 입력하세요", v.url);
+            if (nu && nu.trim()) { await LINKS.child(slug).update({url: nu.trim()}); loadList(); }
+          }),
+          mkBtn("🗑 삭제","btn-sm btn-danger",async()=>{
+            if (confirm(`"${slug}" 단축주소를 삭제할까요?`)) { await LINKS.child(slug).remove(); loadList(); }
+          })
+        );
+      }
       div.append(s,u,m,row); box.append(div);
     }
-  }catch{ box.innerHTML='<div class="empty">목록을 불러오지 못했어요</div>'; }
+  } catch(e) { box.innerHTML = '<div class="empty">목록을 불러오지 못했어요</div>'; }
 }
 function mkBtn(t,cls,fn){ const b=document.createElement("button"); b.className="btn "+cls; b.textContent=t; b.onclick=fn; return b; }
 
 /* ── 복사 / QR ── */
 async function copyText(t,btn){
-  try{ await navigator.clipboard.writeText(t); }
-  catch{ const ta=document.createElement("textarea"); ta.value=t; document.body.append(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
-  if(btn){ const o=btn.textContent; btn.textContent="✅ 복사됨"; setTimeout(()=>btn.textContent=o,1200); }
+  try { await navigator.clipboard.writeText(t); }
+  catch { const ta=document.createElement("textarea"); ta.value=t; document.body.append(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
+  if (btn && btn.textContent) { const o=btn.textContent; btn.textContent="✅ 복사됨"; setTimeout(()=>btn.textContent=o,1200); }
 }
 function showQR(slug){
-  qrShort=shortUrlOf(slug);
-  document.getElementById("qrUrl").textContent=qrShort.replace(/^https?:\/\//,"");
-  document.getElementById("qrImg").src="https://api.qrserver.com/v1/create-qr-code/?size=480x480&margin=2&data="+encodeURIComponent(qrShort);
-  document.getElementById("qrModal").style.display="flex";
+  qrShort = shortUrlOf(slug);
+  document.getElementById("qrUrl").textContent = qrShort.replace(/^https?:\/\//,"");
+  document.getElementById("qrImg").src = "https://api.qrserver.com/v1/create-qr-code/?size=480x480&margin=2&data=" + encodeURIComponent(qrShort);
+  document.getElementById("qrModal").style.display = "flex";
 }
 async function downloadQR(){
-  try{
-    const r=await fetch(document.getElementById("qrImg").src);
-    const b=await r.blob(); const a=document.createElement("a");
-    a.href=URL.createObjectURL(b); a.download="QR_"+qrShort.split("/").pop()+".png"; a.click();
+  try {
+    const r = await fetch(document.getElementById("qrImg").src);
+    const b = await r.blob(); const a = document.createElement("a");
+    a.href = URL.createObjectURL(b); a.download = "QR_" + qrShort.split("/").pop() + ".png"; a.click();
     URL.revokeObjectURL(a.href);
-  }catch{ window.open(document.getElementById("qrImg").src,"_blank"); }
+  } catch { window.open(document.getElementById("qrImg").src, "_blank"); }
 }
 </script>
 </body>
