@@ -312,10 +312,13 @@ async function claimPendingLinks(){
 /* ── 슬러그 ── */
 const CHARS = "23456789abcdefghjkmnpqrstuvwxyz";
 function randomSlug(){ let s=""; for(let i=0;i<4;i++) s+=CHARS[Math.floor(Math.random()*CHARS.length)]; return s; }
+/* 사이트 자체 페이지와 겹치는 이름 — 단축주소로 못 쓰게 막음 */
+const RESERVED = ["privacy", "index", "404", "admin", "api", "static", "assets", "favicon", "robots", "sitemap", "login", "logout"];
 function cleanSlug(s){
   s = s.trim().replace(/\s+/g,"-");
   if (/[.#$\[\]\/?%&=+]/.test(s)) return null;
   if (s.length > 40) return null;
+  if (RESERVED.includes(s.toLowerCase())) return "__RESERVED__";
   return s;
 }
 function shortUrlOf(slug){ return BASE + "/" + slug; }
@@ -334,6 +337,7 @@ async function makeLink(){
   const isCustom = slug.trim() !== "";
   if (isCustom) {
     slug = cleanSlug(slug);
+    if (slug === "__RESERVED__") { showMsg("이 이름은 사이트가 쓰고 있어서 단축주소로 만들 수 없어요. 다른 이름을 지어주세요!","bad"); return; }
     if (!slug) { showMsg("단축 이름에 쓸 수 없는 글자가 있어요 ( . # $ [ ] / % ? & = + 및 40자 초과 불가 )","bad"); return; }
   }
 
