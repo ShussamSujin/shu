@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "dobble-game-by-sujin"
+  },
+  "targets": {
+    "dobble-game-by-sujin": {
+      "hosting": {
+        "shu": [
+          "shu-is"
+        ]
+      }
+    }
+  }
+}

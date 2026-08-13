@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "target": "shu",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "**/.*",
+      "**/*.md",
+      "serve.ps1"
+    ],
+    "cleanUrls": true
+  }
+}
