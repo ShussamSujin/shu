@@ -234,7 +234,7 @@ h2{font-family:'Black Han Sans',sans-serif;font-size:1.35rem;margin-bottom:4px;t
 <script>
 firebase.initializeApp({
   apiKey: "AIzaSyARMNDkYM-5BSeaJBUig25iAg3XxCQr8SI",
-  authDomain: "dobble-game-by-sujin.firebaseapp.com",
+  authDomain: "shu.is",
   databaseURL: "https://dobble-game-by-sujin-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "dobble-game-by-sujin",
   appId: "1:980035129396:web:997e4e7e3a27fa0894ba61"
@@ -243,7 +243,7 @@ const auth = firebase.auth();
 const LINKS = firebase.database().ref("shu/links");
 const ADMIN_EMAILS = ["gajungssamzzang@gmail.com", "admin@gegseoul.kr"];
 const CUSTOM_DOMAIN = "shu.is";
-const BASE = "http://" + CUSTOM_DOMAIN; // 임시 http — HTTPS 인증서 발급 후 https로 되돌릴 것
+const BASE = "https://" + CUSTOM_DOMAIN;
 
 let me = null, isAdmin = false, tab = "mine";
 let lastShort = "", lastSlug = "", qrShort = "";
