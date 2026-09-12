@@ -21,7 +21,14 @@ const I18N = {
     extFilled: "🐩 Shushu fetched the address! Name it and hit the button",
     admin: " (admin)", logout: "Sign out", save: "⬇ Save", close: "Close",
     editPrompt: "Enter the new destination URL", delConfirm: "Delete this short link?",
-    secTitle: "🔒 Security", privTitle: "📋 Privacy Policy", langLabel: "Language"
+    secTitle: "🔒 Security", privTitle: "📋 Privacy Policy", langLabel: "Language",
+    famTitle: "🌟 SHU Family", famDesc: "More tools by SHU — all living under shu.is",
+    famBW: "SHU Black & White", famBWd: "Chromebook allow/block policy builder — blocks hidden Google games too",
+    famSold: "Google Workspace admin bulk-management tool",
+    famMaild: "Email helper",
+    famAdmind: "Google Admin console practice simulator for teacher training",
+    famGo: "Visit ↗",
+    famMore: "🚧 The SHU Family keeps growing — more tools on the way, stay tuned!"
   },
   ko: {
     title: "SHU 단축주소", heroSub: "단축주소", tagline: "긴 주소를 짧고 예쁘게 — 어떤 언어든 OK",
@@ -44,7 +51,14 @@ const I18N = {
     extFilled: "🐩 슈슈가 주소를 물어왔어요! 이름을 정하고 버튼만 누르세요",
     admin: " (관리자)", logout: "로그아웃", save: "⬇ 저장", close: "닫기",
     editPrompt: "새 목적지 주소를 입력하세요", delConfirm: "이 단축주소를 삭제할까요?",
-    secTitle: "🔒 보안 안내", privTitle: "📋 개인정보 처리방침", langLabel: "언어"
+    secTitle: "🔒 보안 안내", privTitle: "📋 개인정보 처리방침", langLabel: "언어",
+    famTitle: "🌟 SHU 패밀리", famDesc: "SHU가 만든 도구들 — 전부 shu.is 아래에 살고 있어요",
+    famBW: "SHU 블랙&화이트", famBWd: "크롬북 허용·차단 정책 빌더 — 구글 숨은 게임까지 차단",
+    famSold: "구글 워크스페이스 관리자 대량 관리 도구",
+    famMaild: "메일 도우미",
+    famAdmind: "구글 관리 콘솔을 안전하게 연습하는 연수용 시뮬레이터",
+    famGo: "바로가기 ↗",
+    famMore: "🚧 SHU 패밀리는 계속 추가될 예정이에요~ 기대해 주세요!"
   },
   ja: {
     title: "SHU 短縮URL", heroSub: "短縮URL", tagline: "長いURLを短くきれいに — どの言語でもOK",
@@ -66,7 +80,15 @@ const I18N = {
     extFilled: "🐩 シュシュがURLを運んできました！名前を決めてボタンを押してください",
     admin: "（管理者）", logout: "ログアウト", save: "⬇ 保存", close: "閉じる",
     editPrompt: "新しいリンク先URLを入力してください", delConfirm: "この短縮URLを削除しますか？",
-    secTitle: "🔒 セキュリティ", privTitle: "📋 プライバシーポリシー", langLabel: "言語"
+    secTitle: "🔒 セキュリティ", privTitle: "📋 プライバシーポリシー", langLabel: "言語",
+    famTitle: "🌟 SHUファミリー", famGo: "見に行く ↗",
+    famDesc: "SHUが作ったツールたち — すべて shu.is の下に住んでいます",
+    famBW: "SHU ブラック&ホワイト",
+    famBWd: "Chromebookの許可・ブロックポリシービルダー — 隠れたGoogleゲームもブロック",
+    famSold: "Google Workspace管理者向け一括管理ツール",
+    famMaild: "メールアシスタント",
+    famAdmind: "Google 管理コンソールを安全に練習できる研修用シミュレーター",
+    famMore: "🚧 SHUファミリーはこれからも増える予定です〜お楽しみに!"
   },
   zh_CN: {
     title: "SHU 短链接", heroSub: "短链接", tagline: "长网址变短又好看 — 支持任何语言",
@@ -88,7 +110,15 @@ const I18N = {
     extFilled: "🐩 修修叼来了网址！起个名字再按按钮吧",
     admin: "（管理员）", logout: "退出登录", save: "⬇ 保存", close: "关闭",
     editPrompt: "请输入新的目标网址", delConfirm: "要删除这个短链接吗？",
-    secTitle: "🔒 安全说明", privTitle: "📋 隐私政策", langLabel: "语言"
+    secTitle: "🔒 安全说明", privTitle: "📋 隐私政策", langLabel: "语言",
+    famTitle: "🌟 SHU 家族", famGo: "前往 ↗",
+    famDesc: "SHU 打造的更多工具 — 全都住在 shu.is 之下",
+    famBW: "SHU 黑白名单",
+    famBWd: "Chromebook 允许/拦截策略生成器 — 连隐藏的谷歌小游戏也能拦截",
+    famSold: "Google Workspace 管理员批量管理工具",
+    famMaild: "邮件助手",
+    famAdmind: "Google 管理コンソールを安全に練習できる研修用シミュレーター",
+    famMore: "🚧 SHU 家族会持续加入新成员～敬请期待!"
   },
   zh_TW: {
     title: "SHU 短網址", heroSub: "短網址", tagline: "長網址變短又好看 — 支援任何語言",
@@ -110,7 +140,15 @@ const I18N = {
     extFilled: "🐩 修修叼來了網址！取個名字再按按鈕吧",
     admin: "（管理員）", logout: "登出", save: "⬇ 儲存", close: "關閉",
     editPrompt: "請輸入新的目標網址", delConfirm: "要刪除這個短網址嗎？",
-    secTitle: "🔒 安全說明", privTitle: "📋 隱私權政策", langLabel: "語言"
+    secTitle: "🔒 安全說明", privTitle: "📋 隱私權政策", langLabel: "語言",
+    famTitle: "🌟 SHU 家族", famGo: "前往 ↗",
+    famDesc: "SHU 打造的更多工具 — 全都住在 shu.is 之下",
+    famBW: "SHU 黑白名單",
+    famBWd: "Chromebook 允許/封鎖政策產生器 — 連隱藏的 Google 小遊戲也能封鎖",
+    famSold: "Google Workspace 管理員批次管理工具",
+    famMaild: "郵件助手",
+    famAdmind: "Google 管理コンソールを安全に練習できる研修用シミュレーター",
+    famMore: "🚧 SHU 家族會持續加入新成員～敬請期待!"
   },
   es: {
     title: "SHU Acortador de enlaces", heroSub: "Acortador", tagline: "Enlaces largos, cortos y bonitos — en cualquier idioma",
@@ -133,7 +171,15 @@ const I18N = {
     extFilled: "🐩 ¡Shushu trajo la dirección! Ponle nombre y pulsa el botón",
     admin: " (admin)", logout: "Cerrar sesión", save: "⬇ Guardar", close: "Cerrar",
     editPrompt: "Introduce la nueva URL de destino", delConfirm: "¿Borrar este enlace corto?",
-    secTitle: "🔒 Seguridad", privTitle: "📋 Política de privacidad", langLabel: "Idioma"
+    secTitle: "🔒 Seguridad", privTitle: "📋 Política de privacidad", langLabel: "Idioma",
+    famTitle: "🌟 Familia SHU", famGo: "Visitar ↗",
+    famDesc: "Más herramientas de SHU — todas viven bajo shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "Creador de políticas de permitir/bloquear para Chromebooks — bloquea hasta los juegos ocultos de Google",
+    famSold: "Herramienta de gestión masiva para administradores de Google Workspace",
+    famMaild: "Asistente de correo",
+    famAdmind: "Simulador de práctica de la consola de administración de Google",
+    famMore: "🚧 ¡La familia SHU sigue creciendo — pronto habrá más herramientas!"
   },
   pt_BR: {
     title: "SHU Encurtador de links", heroSub: "Encurtador", tagline: "Links longos, curtos e bonitos — em qualquer idioma",
@@ -156,7 +202,15 @@ const I18N = {
     extFilled: "🐩 A Shushu trouxe o endereço! Dê um nome e clique no botão",
     admin: " (admin)", logout: "Sair", save: "⬇ Salvar", close: "Fechar",
     editPrompt: "Digite a nova URL de destino", delConfirm: "Excluir este link curto?",
-    secTitle: "🔒 Segurança", privTitle: "📋 Política de Privacidade", langLabel: "Idioma"
+    secTitle: "🔒 Segurança", privTitle: "📋 Política de Privacidade", langLabel: "Idioma",
+    famTitle: "🌟 Família SHU", famGo: "Visitar ↗",
+    famDesc: "Mais ferramentas da SHU — todas moram em shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "Criador de políticas de permitir/bloquear para Chromebooks — bloqueia até os jogos escondidos do Google",
+    famSold: "Ferramenta de gestão em massa para administradores do Google Workspace",
+    famMaild: "Assistente de e-mail",
+    famAdmind: "Simulador de práctica de la consola de administración de Google",
+    famMore: "🚧 A família SHU continua crescendo — mais ferramentas a caminho!"
   },
   fr: {
     title: "SHU Raccourcisseur de liens", heroSub: "Raccourcisseur", tagline: "Des liens longs, courts et jolis — dans toutes les langues",
@@ -179,7 +233,15 @@ const I18N = {
     extFilled: "🐩 Shushu a rapporté l'adresse ! Nommez-la et appuyez sur le bouton",
     admin: " (admin)", logout: "Se déconnecter", save: "⬇ Enregistrer", close: "Fermer",
     editPrompt: "Saisissez la nouvelle URL de destination", delConfirm: "Supprimer ce lien court ?",
-    secTitle: "🔒 Sécurité", privTitle: "📋 Politique de confidentialité", langLabel: "Langue"
+    secTitle: "🔒 Sécurité", privTitle: "📋 Politique de confidentialité", langLabel: "Langue",
+    famTitle: "🌟 Famille SHU", famGo: "Visiter ↗",
+    famDesc: "D'autres outils signés SHU — tous hébergés sous shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "Générateur de politiques d'autorisation/blocage pour Chromebooks — bloque même les jeux cachés de Google",
+    famSold: "Outil de gestion en masse pour administrateurs Google Workspace",
+    famMaild: "Assistant e-mail",
+    famAdmind: "Simulateur d'entraînement à la console d'administration Google",
+    famMore: "🚧 La famille SHU continue de s'agrandir — restez à l'écoute !"
   },
   de: {
     title: "SHU Link-Kürzer", heroSub: "Kürzer", tagline: "Lange Links, kurz und schön — in jeder Sprache",
@@ -202,7 +264,15 @@ const I18N = {
     extFilled: "🐩 Shushu hat die Adresse gebracht! Gib ihr einen Namen und klicke",
     admin: " (Admin)", logout: "Abmelden", save: "⬇ Speichern", close: "Schließen",
     editPrompt: "Gib die neue Ziel-URL ein", delConfirm: "Diesen Kurzlink löschen?",
-    secTitle: "🔒 Sicherheit", privTitle: "📋 Datenschutzerklärung", langLabel: "Sprache"
+    secTitle: "🔒 Sicherheit", privTitle: "📋 Datenschutzerklärung", langLabel: "Sprache",
+    famTitle: "🌟 SHU-Familie", famGo: "Öffnen ↗",
+    famDesc: "Weitere Tools von SHU — alle wohnen unter shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "Erlauben/Blockieren-Richtlinien-Builder für Chromebooks — blockiert sogar versteckte Google-Spiele",
+    famSold: "Massenverwaltungstool für Google-Workspace-Administratoren",
+    famMaild: "E-Mail-Assistent",
+    famAdmind: "Übungssimulator für die Google Admin-Konsole",
+    famMore: "🚧 Die SHU-Familie wächst weiter — bald gibt es mehr Tools!"
   },
   ru: {
     title: "SHU Сокращатель ссылок", heroSub: "Сократитель", tagline: "Длинные ссылки — короткие и красивые, на любом языке",
@@ -225,7 +295,15 @@ const I18N = {
     extFilled: "🐩 Шушу принесла адрес! Дайте имя и нажмите кнопку",
     admin: " (админ)", logout: "Выйти", save: "⬇ Сохранить", close: "Закрыть",
     editPrompt: "Введите новый адрес назначения", delConfirm: "Удалить эту короткую ссылку?",
-    secTitle: "🔒 Безопасность", privTitle: "📋 Политика конфиденциальности", langLabel: "Язык"
+    secTitle: "🔒 Безопасность", privTitle: "📋 Политика конфиденциальности", langLabel: "Язык",
+    famTitle: "🌟 Семья SHU", famGo: "Открыть ↗",
+    famDesc: "Другие инструменты SHU — все живут под shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "Конструктор политик разрешения/блокировки для Chromebook — блокирует даже скрытые игры Google",
+    famSold: "Инструмент массового управления для администраторов Google Workspace",
+    famMaild: "Почтовый помощник",
+    famAdmind: "Тренажёр консоли администратора Google для обучения",
+    famMore: "🚧 Семья SHU продолжает расти — скоро новые инструменты!"
   },
   id: {
     title: "SHU Pemendek Tautan", heroSub: "Pemendek", tagline: "Tautan panjang jadi pendek dan cantik — dalam bahasa apa pun",
@@ -248,7 +326,15 @@ const I18N = {
     extFilled: "🐩 Shushu membawa alamatnya! Beri nama lalu tekan tombol",
     admin: " (admin)", logout: "Keluar", save: "⬇ Simpan", close: "Tutup",
     editPrompt: "Masukkan URL tujuan baru", delConfirm: "Hapus tautan pendek ini?",
-    secTitle: "🔒 Keamanan", privTitle: "📋 Kebijakan Privasi", langLabel: "Bahasa"
+    secTitle: "🔒 Keamanan", privTitle: "📋 Kebijakan Privasi", langLabel: "Bahasa",
+    famTitle: "🌟 Keluarga SHU", famGo: "Kunjungi ↗",
+    famDesc: "Alat-alat lain buatan SHU — semuanya tinggal di shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "Pembuat kebijakan izin/blokir Chromebook — memblokir game tersembunyi Google juga",
+    famSold: "Alat pengelolaan massal untuk admin Google Workspace",
+    famMaild: "Asisten email",
+    famAdmind: "Simulator latihan konsol Admin Google",
+    famMore: "🚧 Keluarga SHU terus bertambah — nantikan alat-alat baru!"
   },
   vi: {
     title: "SHU Rút gọn liên kết", heroSub: "Rút gọn", tagline: "Liên kết dài thành ngắn và đẹp — mọi ngôn ngữ",
@@ -271,7 +357,15 @@ const I18N = {
     extFilled: "🐩 Shushu đã mang địa chỉ về! Đặt tên rồi nhấn nút",
     admin: " (quản trị)", logout: "Đăng xuất", save: "⬇ Lưu", close: "Đóng",
     editPrompt: "Nhập URL đích mới", delConfirm: "Xóa liên kết rút gọn này?",
-    secTitle: "🔒 Bảo mật", privTitle: "📋 Chính sách quyền riêng tư", langLabel: "Ngôn ngữ"
+    secTitle: "🔒 Bảo mật", privTitle: "📋 Chính sách quyền riêng tư", langLabel: "Ngôn ngữ",
+    famTitle: "🌟 Gia đình SHU", famGo: "Truy cập ↗",
+    famDesc: "Các công cụ khác của SHU — tất cả đều sống dưới shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "Trình tạo chính sách cho phép/chặn cho Chromebook — chặn cả game ẩn của Google",
+    famSold: "Công cụ quản lý hàng loạt cho quản trị viên Google Workspace",
+    famMaild: "Trợ lý email",
+    famAdmind: "Trình mô phỏng luyện tập bảng điều khiển quản trị Google",
+    famMore: "🚧 Gia đình SHU sẽ tiếp tục mở rộng — hãy đón chờ nhé!"
   },
   hi: {
     title: "SHU लिंक शॉर्टनर", heroSub: "शॉर्टनर", tagline: "लंबे लिंक छोटे और सुंदर — किसी भी भाषा में",
@@ -294,7 +388,15 @@ const I18N = {
     extFilled: "🐩 शूशू पता ले आया! नाम दें और बटन दबाएँ",
     admin: " (एडमिन)", logout: "साइन आउट", save: "⬇ सहेजें", close: "बंद करें",
     editPrompt: "नया गंतव्य URL डालें", delConfirm: "यह शॉर्ट लिंक हटाएँ?",
-    secTitle: "🔒 सुरक्षा", privTitle: "📋 गोपनीयता नीति", langLabel: "भाषा"
+    secTitle: "🔒 सुरक्षा", privTitle: "📋 गोपनीयता नीति", langLabel: "भाषा",
+    famTitle: "🌟 SHU परिवार", famGo: "देखें ↗",
+    famDesc: "SHU के और टूल — सब shu.is के नीचे रहते हैं",
+    famBW: "SHU ब्लैक एंड व्हाइट",
+    famBWd: "Chromebook के लिए अनुमति/ब्लॉक नीति बिल्डर — Google के छिपे गेम भी ब्लॉक करता है",
+    famSold: "Google Workspace एडमिन के लिए बल्क प्रबंधन टूल",
+    famMaild: "ईमेल सहायक",
+    famAdmind: "Google Admin कंसोल अभ्यास सिम्युलेटर",
+    famMore: "🚧 SHU परिवार बढ़ता रहेगा — नए टूल जल्द आ रहे हैं!"
   },
   ar: {
     title: "SHU مختصر الروابط", heroSub: "مختصر", tagline: "روابط طويلة تصبح قصيرة وجميلة — بأي لغة",
@@ -317,7 +419,15 @@ const I18N = {
     extFilled: "🐩 أحضر شوشو العنوان! سمِّه ثم اضغط الزر",
     admin: " (مشرف)", logout: "تسجيل الخروج", save: "⬇ حفظ", close: "إغلاق",
     editPrompt: "أدخل عنوان الوجهة الجديد", delConfirm: "حذف هذا الرابط القصير؟",
-    secTitle: "🔒 الأمان", privTitle: "📋 سياسة الخصوصية", langLabel: "اللغة"
+    secTitle: "🔒 الأمان", privTitle: "📋 سياسة الخصوصية", langLabel: "اللغة",
+    famTitle: "🌟 عائلة SHU", famGo: "زيارة ↗",
+    famDesc: "أدوات أخرى من SHU — كلها تعيش تحت shu.is",
+    famBW: "SHU أبيض وأسود",
+    famBWd: "منشئ سياسات السماح/الحظر لأجهزة Chromebook — يحظر حتى ألعاب Google المخفية",
+    famSold: "أداة إدارة جماعية لمسؤولي Google Workspace",
+    famMaild: "مساعد البريد الإلكتروني",
+    famAdmind: "محاكي تدريبي لوحدة تحكم مشرف Google",
+    famMore: "🚧 عائلة SHU تكبر باستمرار — ترقّبوا أدوات جديدة!"
   },
   th: {
     title: "SHU ย่อลิงก์", heroSub: "ย่อลิงก์", tagline: "ลิงก์ยาวให้สั้นและสวย — ได้ทุกภาษา",
@@ -340,7 +450,15 @@ const I18N = {
     extFilled: "🐩 ชูชูคาบที่อยู่มาให้แล้ว! ตั้งชื่อแล้วกดปุ่ม",
     admin: " (ผู้ดูแล)", logout: "ออกจากระบบ", save: "⬇ บันทึก", close: "ปิด",
     editPrompt: "ใส่ URL ปลายทางใหม่", delConfirm: "ลบลิงก์สั้นนี้?",
-    secTitle: "🔒 ความปลอดภัย", privTitle: "📋 นโยบายความเป็นส่วนตัว", langLabel: "ภาษา"
+    secTitle: "🔒 ความปลอดภัย", privTitle: "📋 นโยบายความเป็นส่วนตัว", langLabel: "ภาษา",
+    famTitle: "🌟 ครอบครัว SHU", famGo: "ไปดู ↗",
+    famDesc: "เครื่องมืออื่น ๆ จาก SHU — ทั้งหมดอยู่ภายใต้ shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "เครื่องมือสร้างนโยบายอนุญาต/บล็อกสำหรับ Chromebook — บล็อกได้แม้แต่เกมลับของ Google",
+    famSold: "เครื่องมือจัดการจำนวนมากสำหรับผู้ดูแล Google Workspace",
+    famMaild: "ผู้ช่วยอีเมล",
+    famAdmind: "เครื่องมือจำลองคอนโซลผู้ดูแลระบบ Google",
+    famMore: "🚧 ครอบครัว SHU จะเพิ่มขึ้นเรื่อย ๆ — โปรดติดตาม!"
   },
   tr: {
     title: "SHU Bağlantı Kısaltıcı", heroSub: "Kısaltıcı", tagline: "Uzun bağlantılar kısa ve şık — her dilde",
@@ -363,7 +481,15 @@ const I18N = {
     extFilled: "🐩 Shushu adresi getirdi! Ad verin ve düğmeye basın",
     admin: " (yönetici)", logout: "Çıkış yap", save: "⬇ Kaydet", close: "Kapat",
     editPrompt: "Yeni hedef URL'yi girin", delConfirm: "Bu kısa bağlantı silinsin mi?",
-    secTitle: "🔒 Güvenlik", privTitle: "📋 Gizlilik Politikası", langLabel: "Dil"
+    secTitle: "🔒 Güvenlik", privTitle: "📋 Gizlilik Politikası", langLabel: "Dil",
+    famTitle: "🌟 SHU Ailesi", famGo: "Ziyaret et ↗",
+    famDesc: "SHU'nun diğer araçları — hepsi shu.is altında yaşıyor",
+    famBW: "SHU Black & White",
+    famBWd: "Chromebook izin/engelleme politikası oluşturucu — gizli Google oyunlarını bile engeller",
+    famSold: "Google Workspace yöneticileri için toplu yönetim aracı",
+    famMaild: "E-posta yardımcısı",
+    famAdmind: "Google Yönetici konsolu alıştırma simülatörü",
+    famMore: "🚧 SHU ailesi büyümeye devam ediyor — yeni araçlar yolda!"
   },
   it: {
     title: "SHU Accorciatore di link", heroSub: "Accorciatore", tagline: "Link lunghi, corti e belli — in qualsiasi lingua",
@@ -386,7 +512,15 @@ const I18N = {
     extFilled: "🐩 Shushu ha portato l'indirizzo! Dagli un nome e premi il pulsante",
     admin: " (admin)", logout: "Esci", save: "⬇ Salva", close: "Chiudi",
     editPrompt: "Inserisci il nuovo URL di destinazione", delConfirm: "Eliminare questo link breve?",
-    secTitle: "🔒 Sicurezza", privTitle: "📋 Informativa sulla privacy", langLabel: "Lingua"
+    secTitle: "🔒 Sicurezza", privTitle: "📋 Informativa sulla privacy", langLabel: "Lingua",
+    famTitle: "🌟 Famiglia SHU", famGo: "Visita ↗",
+    famDesc: "Altri strumenti di SHU — vivono tutti sotto shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "Generatore di criteri consenti/blocca per Chromebook — blocca anche i giochi nascosti di Google",
+    famSold: "Strumento di gestione in massa per amministratori Google Workspace",
+    famMaild: "Assistente e-mail",
+    famAdmind: "Simulatore di pratica della console di amministrazione Google",
+    famMore: "🚧 La famiglia SHU continua a crescere — presto altri strumenti!"
   },
   pl: {
     title: "SHU Skracacz linków", heroSub: "Skracacz", tagline: "Długie linki krótkie i ładne — w każdym języku",
@@ -409,7 +543,15 @@ const I18N = {
     extFilled: "🐩 Shushu przyniósł adres! Nadaj nazwę i naciśnij przycisk",
     admin: " (admin)", logout: "Wyloguj", save: "⬇ Zapisz", close: "Zamknij",
     editPrompt: "Wpisz nowy adres docelowy", delConfirm: "Usunąć ten krótki link?",
-    secTitle: "🔒 Bezpieczeństwo", privTitle: "📋 Polityka prywatności", langLabel: "Język"
+    secTitle: "🔒 Bezpieczeństwo", privTitle: "📋 Polityka prywatności", langLabel: "Język",
+    famTitle: "🌟 Rodzina SHU", famGo: "Odwiedź ↗",
+    famDesc: "Więcej narzędzi od SHU — wszystkie mieszkają pod shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "Kreator zasad zezwalania/blokowania dla Chromebooków — blokuje nawet ukryte gry Google",
+    famSold: "Narzędzie do masowego zarządzania dla administratorów Google Workspace",
+    famMaild: "Asystent e-mail",
+    famAdmind: "Symulator konsoli administracyjnej Google",
+    famMore: "🚧 Rodzina SHU wciąż rośnie — wkrótce kolejne narzędzia!"
   },
   nl: {
     title: "SHU Linkverkorter", heroSub: "Verkorter", tagline: "Lange links kort en mooi — in elke taal",
@@ -432,7 +574,15 @@ const I18N = {
     extFilled: "🐩 Shushu heeft het adres opgehaald! Geef het een naam en druk op de knop",
     admin: " (beheerder)", logout: "Uitloggen", save: "⬇ Opslaan", close: "Sluiten",
     editPrompt: "Voer de nieuwe bestemmings-URL in", delConfirm: "Deze korte link verwijderen?",
-    secTitle: "🔒 Beveiliging", privTitle: "📋 Privacybeleid", langLabel: "Taal"
+    secTitle: "🔒 Beveiliging", privTitle: "📋 Privacybeleid", langLabel: "Taal",
+    famTitle: "🌟 SHU-familie", famGo: "Bezoeken ↗",
+    famDesc: "Meer tools van SHU — ze wonen allemaal onder shu.is",
+    famBW: "SHU Black & White",
+    famBWd: "Toestaan/blokkeren-beleidsbouwer voor Chromebooks — blokkeert zelfs verborgen Google-games",
+    famSold: "Bulkbeheertool voor Google Workspace-beheerders",
+    famMaild: "E-mailassistent",
+    famAdmind: "Oefensimulator voor de Google Beheerdersconsole",
+    famMore: "🚧 De SHU-familie blijft groeien — binnenkort meer tools!"
   }
 };
 

@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex">
 <title>SHU 단축주소 — 링크계의 슈퍼스타</title>
 <link rel="icon" type="image/png" href="shushu.png">
-<script src="i18n.js?v=2"></script>
+<script src="i18n.js?v=3"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
@@ -131,6 +131,16 @@ h2{font-family:'Black Han Sans',sans-serif;font-size:1.35rem;margin-bottom:4px;t
 .shushu{width:150px;height:auto;display:block;margin:0 auto 4px;animation:bob 3s ease-in-out infinite;filter:drop-shadow(4px 5px 0 rgba(20,20,20,.16))}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-8px) rotate(1.5deg)}}
 .shushu-mini{width:128px;margin:0 auto -2px;filter:drop-shadow(4px 5px 0 rgba(20,20,20,.22))}
+/* ── SHU 패밀리 ── */
+.fam-item{display:flex;align-items:center;gap:12px;padding:13px 4px;border-bottom:2px dashed #e0e0e0;text-align:left}
+.fam-item>div{flex:1;min-width:0}
+.fam-item:last-child{border-bottom:0}
+.fam-item .fi{font-size:1.6rem;flex:none}
+.fam-item .ft{font-weight:800}
+.fam-item .fd{font-size:.85rem;color:#666}
+.fam-item a.fgo{margin-left:auto;text-decoration:none;font-weight:800;font-size:.85rem;border:2.5px solid var(--ink);border-radius:11px;padding:7px 13px;background:var(--yellow);color:var(--ink);white-space:nowrap;box-shadow:3px 3px 0 var(--ink);transition:.12s;flex:none}
+.fam-item a.fgo:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.fam-more{margin-top:12px;text-align:center;font-size:.85rem;font-weight:800;color:#8a7500;background:#fff4c9;border:2.5px dashed var(--ink);border-radius:11px;padding:10px}
 @media (max-width:480px){.hero-logo{font-size:3rem}.sticker{display:none}}
 </style>
 </head>
@@ -155,6 +165,15 @@ h2{font-family:'Black Han Sans',sans-serif;font-size:1.35rem;margin-bottom:4px;t
     </button>
     <div class="hint" style="margin-top:14px" data-t="loginHint"></div>
     <div class="msg bad" id="gateMsg" style="display:none"></div>
+  </div>
+  <div class="card">
+    <h2 data-t="famTitle"></h2>
+    <div class="hint" data-t="famDesc"></div>
+    <div class="fam-item"><span class="fi">🛡️</span><div><div class="ft" data-t="famBW"></div><div class="fd" data-t="famBWd"></div></div><a class="fgo" href="https://blacknwhite.shu.is" target="_blank" rel="noopener" data-t="famGo"></a></div>
+    <div class="fam-item"><span class="fi">🛠️</span><div><div class="ft">SHUlution</div><div class="fd" data-t="famSold"></div></div><a class="fgo" href="https://shulution.shu.is" target="_blank" rel="noopener" data-t="famGo"></a></div>
+    <div class="fam-item"><span class="fi">📧</span><div><div class="ft">MailSHU</div><div class="fd" data-t="famMaild"></div></div><a class="fgo" href="https://mailshu.shu.is" target="_blank" rel="noopener" data-t="famGo"></a></div>
+    <div class="fam-item"><span class="fi">🎛️</span><div><div class="ft">Admin Simulator</div><div class="fd" data-t="famAdmind"></div></div><a class="fgo" href="https://adminsimulator.shu.is" target="_blank" rel="noopener" data-t="famGo"></a></div>
+    <div class="fam-more" data-t="famMore"></div>
   </div>
   <div class="foot">
     ⓒ 2026 Google Certified Trainer &amp; Innovator <b>Sujin Lee</b><br>
@@ -210,6 +229,16 @@ h2{font-family:'Black Han Sans',sans-serif;font-size:1.35rem;margin-bottom:4px;t
   </div>
 
   <div class="card ad-card" id="adCard"></div>
+
+  <div class="card">
+    <h2 data-t="famTitle"></h2>
+    <div class="hint" data-t="famDesc"></div>
+    <div class="fam-item"><span class="fi">🛡️</span><div><div class="ft" data-t="famBW"></div><div class="fd" data-t="famBWd"></div></div><a class="fgo" href="https://blacknwhite.shu.is" target="_blank" rel="noopener" data-t="famGo"></a></div>
+    <div class="fam-item"><span class="fi">🛠️</span><div><div class="ft">SHUlution</div><div class="fd" data-t="famSold"></div></div><a class="fgo" href="https://shulution.shu.is" target="_blank" rel="noopener" data-t="famGo"></a></div>
+    <div class="fam-item"><span class="fi">📧</span><div><div class="ft">MailSHU</div><div class="fd" data-t="famMaild"></div></div><a class="fgo" href="https://mailshu.shu.is" target="_blank" rel="noopener" data-t="famGo"></a></div>
+    <div class="fam-item"><span class="fi">🎛️</span><div><div class="ft">Admin Simulator</div><div class="fd" data-t="famAdmind"></div></div><a class="fgo" href="https://adminsimulator.shu.is" target="_blank" rel="noopener" data-t="famGo"></a></div>
+    <div class="fam-more" data-t="famMore"></div>
+  </div>
 
   <div class="card">
     <h2 data-t="myLinks"></h2> <span class="count" id="linkCount"></span>
