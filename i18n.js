@@ -25,7 +25,7 @@ const I18N = {
     famTitle: "🌟 SHU Family", famDesc: "More tools by SHU — all living under shu.is",
     famBW: "SHU Black & White", famBWd: "Chromebook allow/block policy builder — blocks hidden Google games too",
     famSold: "Google Workspace admin bulk-management tool",
-    famMaild: "Email helper",
+    famMaild: "Gmail read-receipt helper",
     famAdmind: "Google Admin console practice simulator for teacher training",
     famGo: "Visit ↗",
     famMore: "🚧 The SHU Family keeps growing — more tools on the way, stay tuned!"
@@ -55,7 +55,7 @@ const I18N = {
     famTitle: "🌟 SHU 패밀리", famDesc: "SHU가 만든 도구들 — 전부 shu.is 아래에 살고 있어요",
     famBW: "SHU 블랙&화이트", famBWd: "크롬북 허용·차단 정책 빌더 — 구글 숨은 게임까지 차단",
     famSold: "구글 워크스페이스 관리자 대량 관리 도구",
-    famMaild: "메일 도우미",
+    famMaild: "Gmail 수신확인 도우미",
     famAdmind: "구글 관리 콘솔을 안전하게 연습하는 연수용 시뮬레이터",
     famGo: "바로가기 ↗",
     famMore: "🚧 SHU 패밀리는 계속 추가될 예정이에요~ 기대해 주세요!"
@@ -86,7 +86,7 @@ const I18N = {
     famBW: "SHU ブラック&ホワイト",
     famBWd: "Chromebookの許可・ブロックポリシービルダー — 隠れたGoogleゲームもブロック",
     famSold: "Google Workspace管理者向け一括管理ツール",
-    famMaild: "メールアシスタント",
+    famMaild: "Gmail 開封確認アシスタント",
     famAdmind: "Google 管理コンソールを安全に練習できる研修用シミュレーター",
     famMore: "🚧 SHUファミリーはこれからも増える予定です〜お楽しみに!"
   },
@@ -116,7 +116,7 @@ const I18N = {
     famBW: "SHU 黑白名单",
     famBWd: "Chromebook 允许/拦截策略生成器 — 连隐藏的谷歌小游戏也能拦截",
     famSold: "Google Workspace 管理员批量管理工具",
-    famMaild: "邮件助手",
+    famMaild: "Gmail 開封確認アシスタント",
     famAdmind: "Google 管理コンソールを安全に練習できる研修用シミュレーター",
     famMore: "🚧 SHU 家族会持续加入新成员～敬请期待!"
   },
@@ -146,7 +146,7 @@ const I18N = {
     famBW: "SHU 黑白名單",
     famBWd: "Chromebook 允許/封鎖政策產生器 — 連隱藏的 Google 小遊戲也能封鎖",
     famSold: "Google Workspace 管理員批次管理工具",
-    famMaild: "郵件助手",
+    famMaild: "Gmail 開封確認アシスタント",
     famAdmind: "Google 管理コンソールを安全に練習できる研修用シミュレーター",
     famMore: "🚧 SHU 家族會持續加入新成員～敬請期待!"
   },
@@ -177,7 +177,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Creador de políticas de permitir/bloquear para Chromebooks — bloquea hasta los juegos ocultos de Google",
     famSold: "Herramienta de gestión masiva para administradores de Google Workspace",
-    famMaild: "Asistente de correo",
+    famMaild: "Asistente de confirmación de lectura de Gmail",
     famAdmind: "Simulador de práctica de la consola de administración de Google",
     famMore: "🚧 ¡La familia SHU sigue creciendo — pronto habrá más herramientas!"
   },
@@ -208,7 +208,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Criador de políticas de permitir/bloquear para Chromebooks — bloqueia até os jogos escondidos do Google",
     famSold: "Ferramenta de gestão em massa para administradores do Google Workspace",
-    famMaild: "Assistente de e-mail",
+    famMaild: "Asistente de confirmación de lectura de Gmail",
     famAdmind: "Simulador de práctica de la consola de administración de Google",
     famMore: "🚧 A família SHU continua crescendo — mais ferramentas a caminho!"
   },
@@ -239,7 +239,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Générateur de politiques d'autorisation/blocage pour Chromebooks — bloque même les jeux cachés de Google",
     famSold: "Outil de gestion en masse pour administrateurs Google Workspace",
-    famMaild: "Assistant e-mail",
+    famMaild: "Assistant d'accusé de lecture Gmail",
     famAdmind: "Simulateur d'entraînement à la console d'administration Google",
     famMore: "🚧 La famille SHU continue de s'agrandir — restez à l'écoute !"
   },
@@ -270,7 +270,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Erlauben/Blockieren-Richtlinien-Builder für Chromebooks — blockiert sogar versteckte Google-Spiele",
     famSold: "Massenverwaltungstool für Google-Workspace-Administratoren",
-    famMaild: "E-Mail-Assistent",
+    famMaild: "Gmail-Lesebestätigungs-Assistent",
     famAdmind: "Übungssimulator für die Google Admin-Konsole",
     famMore: "🚧 Die SHU-Familie wächst weiter — bald gibt es mehr Tools!"
   },
@@ -301,7 +301,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Конструктор политик разрешения/блокировки для Chromebook — блокирует даже скрытые игры Google",
     famSold: "Инструмент массового управления для администраторов Google Workspace",
-    famMaild: "Почтовый помощник",
+    famMaild: "Помощник уведомлений о прочтении Gmail",
     famAdmind: "Тренажёр консоли администратора Google для обучения",
     famMore: "🚧 Семья SHU продолжает расти — скоро новые инструменты!"
   },
@@ -332,7 +332,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Pembuat kebijakan izin/blokir Chromebook — memblokir game tersembunyi Google juga",
     famSold: "Alat pengelolaan massal untuk admin Google Workspace",
-    famMaild: "Asisten email",
+    famMaild: "Asisten tanda terima baca Gmail",
     famAdmind: "Simulator latihan konsol Admin Google",
     famMore: "🚧 Keluarga SHU terus bertambah — nantikan alat-alat baru!"
   },
@@ -363,7 +363,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Trình tạo chính sách cho phép/chặn cho Chromebook — chặn cả game ẩn của Google",
     famSold: "Công cụ quản lý hàng loạt cho quản trị viên Google Workspace",
-    famMaild: "Trợ lý email",
+    famMaild: "Trợ lý xác nhận đã đọc Gmail",
     famAdmind: "Trình mô phỏng luyện tập bảng điều khiển quản trị Google",
     famMore: "🚧 Gia đình SHU sẽ tiếp tục mở rộng — hãy đón chờ nhé!"
   },
@@ -394,7 +394,7 @@ const I18N = {
     famBW: "SHU ब्लैक एंड व्हाइट",
     famBWd: "Chromebook के लिए अनुमति/ब्लॉक नीति बिल्डर — Google के छिपे गेम भी ब्लॉक करता है",
     famSold: "Google Workspace एडमिन के लिए बल्क प्रबंधन टूल",
-    famMaild: "ईमेल सहायक",
+    famMaild: "Gmail पठन-रसीद सहायक",
     famAdmind: "Google Admin कंसोल अभ्यास सिम्युलेटर",
     famMore: "🚧 SHU परिवार बढ़ता रहेगा — नए टूल जल्द आ रहे हैं!"
   },
@@ -425,7 +425,7 @@ const I18N = {
     famBW: "SHU أبيض وأسود",
     famBWd: "منشئ سياسات السماح/الحظر لأجهزة Chromebook — يحظر حتى ألعاب Google المخفية",
     famSold: "أداة إدارة جماعية لمسؤولي Google Workspace",
-    famMaild: "مساعد البريد الإلكتروني",
+    famMaild: "مساعد إيصال قراءة Gmail",
     famAdmind: "محاكي تدريبي لوحدة تحكم مشرف Google",
     famMore: "🚧 عائلة SHU تكبر باستمرار — ترقّبوا أدوات جديدة!"
   },
@@ -456,7 +456,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "เครื่องมือสร้างนโยบายอนุญาต/บล็อกสำหรับ Chromebook — บล็อกได้แม้แต่เกมลับของ Google",
     famSold: "เครื่องมือจัดการจำนวนมากสำหรับผู้ดูแล Google Workspace",
-    famMaild: "ผู้ช่วยอีเมล",
+    famMaild: "ผู้ช่วยยืนยันการอ่าน Gmail",
     famAdmind: "เครื่องมือจำลองคอนโซลผู้ดูแลระบบ Google",
     famMore: "🚧 ครอบครัว SHU จะเพิ่มขึ้นเรื่อย ๆ — โปรดติดตาม!"
   },
@@ -487,7 +487,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Chromebook izin/engelleme politikası oluşturucu — gizli Google oyunlarını bile engeller",
     famSold: "Google Workspace yöneticileri için toplu yönetim aracı",
-    famMaild: "E-posta yardımcısı",
+    famMaild: "Gmail okundu bilgisi yardımcısı",
     famAdmind: "Google Yönetici konsolu alıştırma simülatörü",
     famMore: "🚧 SHU ailesi büyümeye devam ediyor — yeni araçlar yolda!"
   },
@@ -518,7 +518,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Generatore di criteri consenti/blocca per Chromebook — blocca anche i giochi nascosti di Google",
     famSold: "Strumento di gestione in massa per amministratori Google Workspace",
-    famMaild: "Assistente e-mail",
+    famMaild: "Assistente conferma di lettura Gmail",
     famAdmind: "Simulatore di pratica della console di amministrazione Google",
     famMore: "🚧 La famiglia SHU continua a crescere — presto altri strumenti!"
   },
@@ -549,7 +549,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Kreator zasad zezwalania/blokowania dla Chromebooków — blokuje nawet ukryte gry Google",
     famSold: "Narzędzie do masowego zarządzania dla administratorów Google Workspace",
-    famMaild: "Asystent e-mail",
+    famMaild: "Asystent potwierdzeń odczytu Gmail",
     famAdmind: "Symulator konsoli administracyjnej Google",
     famMore: "🚧 Rodzina SHU wciąż rośnie — wkrótce kolejne narzędzia!"
   },
@@ -580,7 +580,7 @@ const I18N = {
     famBW: "SHU Black & White",
     famBWd: "Toestaan/blokkeren-beleidsbouwer voor Chromebooks — blokkeert zelfs verborgen Google-games",
     famSold: "Bulkbeheertool voor Google Workspace-beheerders",
-    famMaild: "E-mailassistent",
+    famMaild: "Gmail-leesbevestigingsassistent",
     famAdmind: "Oefensimulator voor de Google Beheerdersconsole",
     famMore: "🚧 De SHU-familie blijft groeien — binnenkort meer tools!"
   }
